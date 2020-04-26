@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+</head>
+<body>
+</body>
+<script language="javascript">
+
+    function getRandomText() {
+        eval("var word=" + '"\\u' + (Math.round(Math.random() * 20901) + 19968).toString(16) + '"')//生成随机汉字
+        return word;
+    }
+
+    //document.write(getRandomText());
+
+
+
+    function randomEng() {
+        var _len = 2;
+        var i = 0;
+        var _str = "";
+        while (i < _len) {
+            i++;
+            var ranNum = Math.ceil(Math.random() * 25);
+            _str += String.fromCharCode(65 + ranNum);
+        }
+        return _str;
+    }
+
+    document.write(randomEng());
+
+    function randomString(len) {
+        len = len || 32;
+        var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';    /****默认去掉了容易混淆的字符oOLl,9gq,Vv,Uu,I1****/
+        var maxPos = $chars.length;
+        var pwd = '';
+        for (i = 0; i < len; i++) {
+            pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+        }
+        return pwd;
+    }
+    //document.write(randomString(32));
+
+
+</script>
+
+</html>

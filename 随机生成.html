@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery.js" ></script>
+</head>
+
+<body>
+    <button id="grand" onclick="randCode()">点击</button>
+</body>
+<script>
+
+    console.log(Math.ceil(Math.random() * 25))
+    console.log(Math.floor(Math.random()*26)+"a".charCodeAt(0))
+
+
+    function randCode() {
+        var word= +  '\\u' + (Math.round(Math.random() * 20901) + 19968).toString(16)//生成随机汉字
+  //return word;
+console.log(word)
+    }
+
+
+    $("#grand").on("click", function () {
+
+    })
+</script>
+
+</html>
