@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="minimal-ui">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <title>等待动画</title>
+</head>
+<body>
+    <button id="grand">打开动画</button>
+
+    <button class="btn btn-info identity" id="" data-toggle="modal" data-target="#success_frame_two">
+        打开动画2
+    </button>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="success_frame" style="pointer-events:none;">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div>
+                    <img src="./img/dongtai2.gif"/>
+                    <button id="grand_two">关闭动画</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+                <br><br>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="success_frame_two">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div>
+                    <video width="800" autoplay="autoplay" controls="controls">
+                        <source src="./img/EXO (엑소)-으르렁 (Growl) (韩文版) (Growl)(蓝光).mp4" type="video/mp4"></source>
+                    </video>
+                    <button id="grand_two_two">关闭动画</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+                <br><br>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(function(){
+        $("#grand").click(function (){
+            $("#success_frame").modal("show");
+            function tishi(){ 
+                $("#success_frame_two").modal("show");
+                $("#success_frame").modal("hide");
+            } 
+            setTimeout(tishi,5000) 
+        });
+        $("#grand_two").click(function (){
+            $("#success_frame").modal("hide");
+        });
+        $("#grand_two_two").click(function (){
+            $("#success_frame_two").modal("hide");
+        });
+
+    })
+</script>
+</html>

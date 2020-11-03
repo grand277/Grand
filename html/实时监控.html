@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <title></title>
+    </head>
+    <body>
+    <span class="title2 hide">还可以输入<span>140</span>字</span>
+    <textarea name="text" id="textarea" cols="30" rows="10" oninput="font_siz()"></textarea>            
+    <script>
+                    $("#textarea").focusin(function () {
+    $(".title").addClass("hide");
+    $(".title2").removeClass("hide")
+});
+$("#textarea").focusout(function() {
+    $(".title").removeClass("hide");
+    $(".title2").addClass("hide")
+});
+function font_siz() {
+    var num = $("#textarea").val().length;
+    if(num<140){
+         $(".title2").html('还可以输入'+ '<span></span>' + '字');
+        var all = $(".title2 span").text();
+        $(".title2 span").text(140-num);
+    }else{
+         $(".title2").html('已超出'+ '<span>0</span>' + '字');
+        var all = $(".title2 span").text();
+        $(".title2 span").text(Math.abs(140-num));
+    }
+ 
+}
+            </script>
+
+    </body>
+</html>

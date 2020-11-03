@@ -1,0 +1,58 @@
+
+<HTML>
+    <HEAD>
+    <TITLE>1</TITLE>
+    <META NAME="Generator" CONTENT="EditPlus">
+        <META NAME="Author" CONTENT="">
+            <META NAME="Keywords" CONTENT="">
+                <META NAME="Description" CONTENT="">
+    </HEAD>
+    <script Language="javascript">
+        function a(x, y, color) {
+            document.write("<img border='0' style='position: absolute; left: "
+                    + (x + 20) + "; top: " + (y + 20) + ";background-color: "
+                    + color + "' src='px.gif' width=1 height=1>")
+        }
+    </script>
+    <body leftmargin=20 topmargin=20>
+        <TABLE border=0 bgcolor="00aaaa" cellspacing="1" width=100>
+            <TR bgcolor="FFFFFF">
+                <TH id="td1" height='50' width=10%>
+                    <div id="canvas" style="position: absolute; top: 20; left: 40">
+                        <table border=0 width=100%>
+                            <tr>
+                                <th valign='middle' align='right'
+                                    style='background: transparent; font-size:13pt'>sector</th>
+                            </tr>
+                            <tr>
+                                <th valign='middle' align='left'
+                                    style='background: transparent; font-size:11pt'>region</th>
+                            </tr>
+                        </table>
+                    </div>
+                </TH>
+                
+            </TR>
+        </TABLE>
+        <script>
+            function line(x1, y1, x2, y2, color) {
+                var tmp
+                if (x1 >= x2) {
+                    tmp = x1;
+                    x1 = x2;
+                    x2 = tmp;
+                    tmp = y1;
+                    y1 = y2;
+                    y2 = tmp;
+                }
+                for (var i = x1; i <= x2; i++) {
+                    x = i;
+                    y = (y2 - y1) / (x2 - x1) * (x - x1) + y1;
+                    a(x, y, color);
+                }
+            } 
+            //line(1,1,100,100,"000000"); 
+            line(td1.offsetLeft,td1.offsetTop,td1.offsetLeft+td1.offsetWidth,td1.offsetTop+td1.offsetHeight,'#FFFFFF')
+        </script>
+    </BODY>
+    </HTML>

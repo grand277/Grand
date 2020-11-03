@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Banner Cycler</title>
+		<script>
+			var banners = ["./img/1@2x.png","./img/2@2x.png","./img/3@2x.png","./img/4@2x.png","./img/5@2x.png","./img/6@2x.png","./img/7@2x.png"]; // 图片地址
+			//         var banners = ["../../static/img/user_register/loading_1.png", "/static/img/user_register/loading_2.png", "../../static/img/user_register/loading_3.png", "/static/img/user_register/loading_4.png", "../../static/img/user_register/loading_5.png", "/static/img/user_register/loading_6.png", "../../static/img/user_register/loading_7.png"]; // 图片地址
+			var counter = 0;
+			function run(){
+				setInterval(cycle,100);  //重复运行cycle函数，周期1000ms
+			}
+			function cycle(){
+				counter++;
+				if(counter == banners.length)	
+					counter = 0;
+				document.getElementById("banner").src = banners[counter];
+			}
+		</script>
+	</head>
+	<body onload = "run();">
+		
+		<img id="banner" alt="banner" src="./img/1@2x.png">
+		
+	</body>
+</html>

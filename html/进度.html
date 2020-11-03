@@ -1,0 +1,67 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>进度条</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+        }
+
+        .graph {
+            width: 450px;
+            border: 1px solid #F8B3D0;
+            height: 25px;
+        }
+
+        #bar {
+            display: block;
+            background: #FFE7F4;
+            float: left;
+            height: 100%;
+            text-align: center;
+        }
+
+        #barNum {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body onload="myFunction()">
+    <p id="demo"></p>
+    <script>
+        function myFunction() {
+            var nowDate = new Date();
+            var EndDate = new Date("2020-10-01 10:30:00")
+            var dateDiff = EndDate.getTime() - nowDate.getTime();
+            var days = Math.floor(dateDiff / (24 * 3600 * 1000)) //计算出天数 
+            //计算出小时数 
+            var leave1 = dateDiff % (24 * 3600 * 1000)  //计算天数后剩余的毫秒数 
+            var hours = Math.floor(leave1 / (3600 * 1000))
+            //计算相差分钟数 
+            var leave2 = leave1 % (3600 * 1000)    //计算小时数后剩余的毫秒数 
+            var minutes = Math.floor(leave2 / (60 * 1000))
+            //计算相差秒数 
+            var leave3 = leave2 % (60 * 1000)   //计算分钟数后剩余的毫秒数 
+            var seconds = Math.round(leave3 / 1000)
+            //调用checkTime方法将数字小于10的在前面补0
+            days = checkTime(days);
+            hours = checkTime(hours);
+            minutes = checkTime(minutes);
+            seconds = checkTime(seconds);
+            var x = document.getElementById("demo");
+            x.innerHTML = "剩余时间:" + days + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒";
+            t = setTimeout(function () { myFunction(), 1000 })
+        }
+        function checkTime(i) {
+            if (i < 10 && i != 0) {
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+</body>
+
+</html>

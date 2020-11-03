@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="minimal-ui">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <title>手机注册</title>
+    <style>
+        body {
+            background-image: url("img/background.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-color: #1c4ea5;
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            border: none;
+            background: none;
+            color: black;
+            font-size: 16px;
+            height: 60%;
+            outline: none;
+            padding: 16px 0;
+        }
+
+        select {
+            border: none;
+            background: none;
+            color: black;
+            font-size: 16px;
+            outline: none;
+            width: 58px;
+        }
+
+        button {
+            border: none;
+            background: none;
+            width: 40%;
+        }
+
+        .p_select_input {
+            width: 80%;
+            margin: 0 auto;
+            border-radius: 40px;
+            background-color: white;
+        }
+
+        p {
+            font-size: 18px;
+            color: white;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        @media screen and (min-width: 1px) and (max-width: 1356px) {
+            .div_v2 {
+                top: 100px;
+            }
+
+        }
+
+        .vertical_bar {
+            color: #CCCCCC;
+            font-size: 26px;
+        }
+
+        .modal_content {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            background-image: url("img/success_background.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+
+    </style>
+</head>
+<body>
+<div style="position: absolute;width: 100%;">
+    <img src="img/background_two.png" style="position: fixed;bottom: 0;">
+    <div style="position: fixed;width: 100%;margin-top: 100%;transform: translateY(-50%);">
+        <div class="p_select_input">
+            &nbsp;
+            <select id="zone">
+                <option value="54">+54 &nbsp;&nbsp;&nbsp; 阿根廷</option>
+                <option value="43">+43 &nbsp;&nbsp;&nbsp; 奥地利</option>
+                <option value="971">+971 &nbsp;&nbsp;&nbsp; 阿拉伯联合酋长国</option>
+                <option value="61">+61 &nbsp;&nbsp;&nbsp; 澳大利亚</option>
+                <option value="374">+374 &nbsp;&nbsp;&nbsp; 亚美尼亚</option>
+                <option value="359">+359 &nbsp;&nbsp;&nbsp; 保加利亚</option>
+                <option value="880">+880 &nbsp;&nbsp;&nbsp; 孟加拉国</option>
+                <option value="591">+591 &nbsp;&nbsp;&nbsp; 玻利维亚</option>
+                <option value="673">+673 &nbsp;&nbsp;&nbsp; 文莱</option>
+                <option value="55">+55 &nbsp;&nbsp;&nbsp; 巴西</option>
+                <option value="973">+973 &nbsp;&nbsp;&nbsp; 巴林</option>
+                <option value="375">+375 &nbsp;&nbsp;&nbsp; 白俄罗斯</option>
+                <option value="32">+32 &nbsp;&nbsp;&nbsp; 比利时</option>
+                <option value="56">+56 &nbsp;&nbsp;&nbsp; 智利</option>
+                <option value="41">+41 &nbsp;&nbsp;&nbsp; 瑞士</option>
+                <option value="57">+57 &nbsp;&nbsp;&nbsp; 哥伦比亚</option>
+                <option value="86" selected>+86 &nbsp;&nbsp;&nbsp; 中国</option>
+                <option value="420">+420 &nbsp;&nbsp;&nbsp; 捷克共和国</option>
+                <option value="357">+357 &nbsp;&nbsp;&nbsp; 塞浦路斯</option>
+                <option value="1">+1 &nbsp;&nbsp;&nbsp; 加拿大</option>
+                <option value="49">+49 &nbsp;&nbsp;&nbsp; 德国</option>
+                <option value="45">+45 &nbsp;&nbsp;&nbsp; 丹麦</option>
+                <option value="20">+20 &nbsp;&nbsp;&nbsp; 埃及</option>
+                <option value="593">+593 &nbsp;&nbsp;&nbsp; 厄瓜多尔</option>
+                <option value="34">+34 &nbsp;&nbsp;&nbsp; 西班牙</option>
+                <option value="372">+372 &nbsp;&nbsp;&nbsp; 爱沙尼亚</option>
+                <option value="33">+33 &nbsp;&nbsp;&nbsp; 法国</option>
+                <option value="358">+358 &nbsp;&nbsp;&nbsp; 芬兰</option>
+                <option value="502">+502 &nbsp;&nbsp;&nbsp; 危地马拉</option>
+                <option value="30">+30 &nbsp;&nbsp;&nbsp; 希腊</option>
+                <option value="44">+44 &nbsp;&nbsp;&nbsp; 英国</option>
+                <option value="36">+36 &nbsp;&nbsp;&nbsp; 匈牙利</option>
+                <option value="504">+504 &nbsp;&nbsp;&nbsp; 洪都拉斯</option>
+                <option value="852">+852 &nbsp;&nbsp;&nbsp; 香港</option>
+                <option value="91">+91 &nbsp;&nbsp;&nbsp; 印度</option>
+                <option value="972">+972 &nbsp;&nbsp;&nbsp; 以色列</option>
+                <option value="39">+39 &nbsp;&nbsp;&nbsp; 意大利</option>
+                <option value="353">+353 &nbsp;&nbsp;&nbsp; 爱尔兰</option>
+                <option value="62">+62 &nbsp;&nbsp;&nbsp; 印度尼西亚</option>
+                <option value="354">+354 &nbsp;&nbsp;&nbsp; 冰岛</option>
+                <option value="962">+962 &nbsp;&nbsp;&nbsp; 约旦</option>
+                <option value="81">+81 &nbsp;&nbsp;&nbsp; 日本</option>
+                <option value="855">+855 &nbsp;&nbsp;&nbsp; 柬埔寨</option>
+                <option value="82">+82 &nbsp;&nbsp;&nbsp; 韩国</option>
+                <option value="7">+7 &nbsp;&nbsp;&nbsp; 哈萨克斯坦</option>
+                <option value="965">+965 &nbsp;&nbsp;&nbsp; 科威特</option>
+                <option value="370">+370 &nbsp;&nbsp;&nbsp; 立陶宛</option>
+                <option value="352">+352 &nbsp;&nbsp;&nbsp; 卢森堡</option>
+                <option value="52">+52 &nbsp;&nbsp;&nbsp; 墨西哥</option>
+                <option value="60">+60 &nbsp;&nbsp;&nbsp; 马来西亚</option>
+                <option value="356">+356 &nbsp;&nbsp;&nbsp; 马耳他</option>
+                <option value="853">+853 &nbsp;&nbsp;&nbsp; 澳门</option>
+                <option value="505">+505 &nbsp;&nbsp;&nbsp; 尼加拉瓜</option>
+                <option value="47">+47 &nbsp;&nbsp;&nbsp; 挪威</option>
+                <option value="64">+64 &nbsp;&nbsp;&nbsp; 新西兰</option>
+                <option value="31">+31 &nbsp;&nbsp;&nbsp; 荷兰</option>
+                <option value="351">+351 &nbsp;&nbsp;&nbsp; 葡萄牙</option>
+                <option value="48">+48 &nbsp;&nbsp;&nbsp; 波兰</option>
+                <option value="51">+51 &nbsp;&nbsp;&nbsp; 秘鲁</option>
+                <option value="595">+595 &nbsp;&nbsp;&nbsp; 巴拉圭</option>
+                <option value="63">+63 &nbsp;&nbsp;&nbsp; 菲律宾</option>
+                <option value="974">+974 &nbsp;&nbsp;&nbsp; 卡塔尔</option>
+                <option value="7">+7 &nbsp;&nbsp;&nbsp; 俄罗斯</option>
+                <option value="40">+40 &nbsp;&nbsp;&nbsp; 罗马尼亚</option>
+                <option value="381">+381 &nbsp;&nbsp;&nbsp; 塞尔维亚共和国</option>
+                <option value="503">+503 &nbsp;&nbsp;&nbsp; 萨尔瓦多</option>
+                <option value="386">+386 &nbsp;&nbsp;&nbsp; 斯洛文尼亚</option>
+                <option value="966">+966 &nbsp;&nbsp;&nbsp; 沙特阿拉伯</option>
+                <option value="378">+378 &nbsp;&nbsp;&nbsp; 圣马力诺</option>
+                <option value="65">+65 &nbsp;&nbsp;&nbsp; 新加坡</option>
+                <option value="421">+421 &nbsp;&nbsp;&nbsp; 斯洛伐克</option>
+                <option value="46">+46 &nbsp;&nbsp;&nbsp; 瑞典</option>
+                <option value="66">+66 &nbsp;&nbsp;&nbsp; 泰国</option>
+                <option value="886">+886 &nbsp;&nbsp;&nbsp; 台湾</option>
+                <option value="90">+90 &nbsp;&nbsp;&nbsp; 土耳其</option>
+                <option value="998">+998 &nbsp;&nbsp;&nbsp; 乌兹别克斯坦</option>
+                <option value="380">+380 &nbsp;&nbsp;&nbsp; 乌克兰</option>
+                <option value="1">+1 &nbsp;&nbsp;&nbsp; 美国</option>
+                <option value="58">+58 &nbsp;&nbsp;&nbsp; 委内瑞拉</option>
+                <option value="84">+84 &nbsp;&nbsp;&nbsp; 越南</option>
+                <option value="27">+27 &nbsp;&nbsp;&nbsp; 南非</option>
+            </select>
+            <span class="vertical_bar">|</span>
+            <input type="tel" placeholder="请输入手机号码" id="phone"
+                   style="width: 58%;"
+                   onkeyup="this.value=this.value.replace(/\D/g,'')"/>
+            <img src="img/yes.png" style="width: 5%;display: none" id="yes">
+            <span style="display: none" id="no">X</span>
+            <br>
+        </div>
+        <br/>
+        <div class="p_select_input">
+            &nbsp;&nbsp;
+            <img src="img/verification_code.png" style="width: 5%;">&nbsp;&nbsp;
+            <input type="tel" placeholder="请输入验证码" style="width: 50%;" id="captcha"
+                   onkeyup="this.value=this.value.replace(/\D/g,'')"/>
+            <input id="btnSendCode" type="button" value="发送验证码" onclick="sendMessage()"
+                   style="color: #2199ED;padding: 0"/>
+        </div>
+        <br/>
+        <div class="p_select_input">
+            &nbsp;&nbsp;
+            <img src="img/password.png" style="width: 5%;">&nbsp;&nbsp;
+            <input type="password" placeholder="请输入六位以上密码" style="width: 70%;"
+                   onkeyup="value=value.replace(/[\u4e00-\u9fa5]/ig,'')"
+                   id="password"/>
+            <img src="img/visible.png" style="width: 5%;display: none" id="visible">
+            <img src="img/Invisible.png" style="width: 5%" id="Invisible">
+        </div>
+        <br/><br/>
+        <div class="p_select_input" style="background-color: #FFEE5A;text-align: center;"
+             id="login_btn">
+            <input type="button" value="立即注册"
+                   style="font-size: 18px;"/>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="success_frame">
+    <div class="modal-dialog modal-lg" role="document" style="padding-top: 50%;">
+        <div class="modal_content">
+            <img src="img/success_btn.png" style="width: 74%;margin-top: 60%;" id="go_download">
+            <div>
+                <input id="Countdown" type="button" value="" disabled
+                       style="font-size: 20px;padding-top: 12px;color: #FFD200"/>
+            </div>
+            <br><br>
+        </div>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript">
+    // 获取字符串标准字节长度 汉字占2个字节
+    function get_str_len(str) {
+        var len = 0;
+        if (str) {
+            for (var i = 0; i < str.length; i++) {
+                if (str.charCodeAt(i) > 127 || str.charCodeAt(i) === 94) {
+                    len += 2;
+                } else {
+                    len++;
+                }
+            }
+        }
+        return len;
+    }
+
+    var InterValObj; //timer变量，控制时间
+    var count = 60; //间隔函数，1秒执行
+    var curCount;//当前剩余秒数
+    //发送验证码
+    function sendMessage() {
+        $("#btnSendCode").attr("disabled", "disabled");
+        var zone = $("#zone").val();    //区号
+        var phone = $("#phone").val();    //手机号
+        curCount = count;
+        if (phone == "") {
+            alert("请输入手机号");
+            return false;
+        }
+        $.ajax({
+            type: "post",
+            url: "http://104.215.192.114:31200/web_sms_code",
+            data: {
+                nation_code: zone,
+                phone_number: phone,
+            },
+            success: function (data) {
+                if (data.ret == 0) {
+                    //设置button效果，开始计时
+                    $("#btnSendCode").val("再次发送" + curCount + "s");
+                    InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+                    $("#btnSendCode").removeAttr("disabled");//启用按钮
+                } else {
+                    $("#btnSendCode").removeAttr("disabled");//启用按钮
+                    alert(data.msg);
+                    return false;
+                }
+            }
+        });
+    }
+
+    //timer处理函数
+    function SetRemainTime() {
+        if (curCount == 0) {
+            window.clearInterval(InterValObj);//停止计时器
+            $("#btnSendCode").removeAttr("disabled");//启用按钮
+            $("#btnSendCode").val("重发验证码");
+        } else {
+            curCount--;
+            $("#btnSendCode").val("再次发送" + curCount + "s");
+        }
+    }
+
+
+    $(function () {
+        // 可见
+        $("#Invisible").click(function () {
+            $("#password").attr("type", "tel");
+            $("#visible").show();
+            $('#Invisible').hide();
+        });
+        // 不可见
+        $("#visible").click(function () {
+            $("#password").attr("type", "password");
+            $("#Invisible").show();
+            $('#visible').hide();
+        });
+
+        // 立即注册
+        $("#login_btn").click(function () {
+                $("#login_btn").attr("disabled", "disabled");
+                var zone = $("#zone").val();    //区号
+                var phone = $("#phone").val();    //手机号
+                var captcha = $("#captcha").val();    //验证码
+                var password = $("#password").val();    //密码
+                (function ($) {
+                    $.getUrlParam = function (name) {
+                        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                        var r = window.location.search.substr(1).match(reg);
+                        if (r != null) return unescape(r[2]);
+                        return null;
+                    }
+                })(jQuery);
+                $(function () {
+                    console.log(window.location.href);
+                    console.log($.getUrlParam('gid'));
+                });
+                var gid = $.getUrlParam('gid');     // 绑定的代理id
+                console.log(gid);
+                if (phone == "") {
+                    alert("请输入手机号");
+                    return false;
+                }
+                if (captcha == "") {
+                    alert("请输入验证码");
+                    return false;
+                }
+                if (password == "") {
+                    alert("请输入密码");
+                    return false;
+                }
+                if (get_str_len(password) < 6) {
+                    alert("密码最少六位数");
+                    return false;
+                }
+                $.ajax({
+                    url: "http://104.215.192.114:31200/phone_registered_by_web",
+                    type: "POST",
+                    data: {
+                        zone: zone,
+                        phone: phone,
+                        code: captcha,
+                        password: password,
+                        gid: gid,
+                    },
+                    success: function (data) {
+                        if (data.ret == 0) {
+                            $("#success_frame").modal("show");
+                            // $("#success_frame").attr("disabled", "disabled");   //不可退出
+                            curCount = 5;
+                            $("#Countdown").val(curCount + "s");
+                            InterValObj = window.setInterval(CountdownTime, 1000); //启动计时器，1秒执行一次
+                            function CountdownTime() {
+                                if (curCount == 0) {
+                                    window.clearInterval(InterValObj);//停止计时器
+                                    window.location.href = "http://www.happybull.vip"
+                                } else {
+                                    curCount--;
+                                    $("#Countdown").val(curCount + "s");
+                                }
+                            }
+                            $("#login_btn").removeAttr("disabled");//启用按钮
+                        } else {
+                            $("#login_btn").removeAttr("disabled");//启用按钮
+                            alert(data.msg);
+                            return false;
+                        }
+                    }
+                });
+            }
+        );
+
+        // 确认手机号码格式为11位数
+        $("#phone").bind('input porpertychange', function () {  //实时监听
+            var zone = $("#zone").val();    //区号
+            var phone = $("#phone").val();    //手机号
+            if (phone == "") {
+                $("#yes").hide();
+                $("#no").hide();
+            } else {
+                $("#no").show();
+            }
+            if (zone == "86") {
+                var phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/;
+                // 从头开始第一位是1；
+                // 第二位是3,4,5,7,8；
+                // 第三位到结尾是0 - 9 的数字。
+                if (phoneReg.test(phone)) {
+                    $("#yes").show();
+                    $("#no").hide();
+                } else {
+                    $("#yes").hide();
+                }
+            }
+
+        });
+
+        // 清空手机输入框
+        $("#no").click(function () {
+            $("#no").hide();
+            $("#phone").val("");  // 赋值
+        });
+
+
+        // 弹框关闭事件
+        $('#success_frame').on('hidden.bs.modal', function () {
+            window.clearInterval(InterValObj);//停止计时器
+        });
+
+        // 点击前往下载
+        $("#go_download").click(function () {
+            window.location.href = "http://www.happybull.vip"
+        });
+
+        var u = navigator.userAgent, app = navigator.appVersion;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if (isAndroid) {
+        }
+        if (isIOS) {
+        }
+
+        let ua = navigator.userAgent;
+        let isSafari = ua.indexOf("Safari") != -1 && ua.indexOf("Version") != -1;
+        let isIphone = ua.indexOf("iPhone") != -1 && ua.indexOf("Version") != -1
+        let isIPad = isSafari && !isIphone && 'ontouchend' in document;
+
+        if (/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent) || isIPad) {
+            console.log("手机iPad");
+        } else {
+            console.log("pc");
+            alert("请用手机打开此网址")
+            // $("#register_phone").hide();
+            // $("#register_pc").show();
+        }
+    });
+
+</script>
+</html>

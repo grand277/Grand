@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery.qrcode.min.js"></script>
+
+<body>
+    <div id="qrcodeDiv">//容器
+        <img id="logoImg" style="display: none;" src="./img/1@2x.png" alt="">
+        图片二维码中间的图片
+   </div>
+<script>
+    //计算宽，高，中心坐标，logo大小
+    var width = 180;
+         var height = 180;
+         var x = width * 0.4;
+         var y = height * 0.4;
+         var lw = width * 0.2;
+         var lh = height * 0.2;
+
+     //生成二维码
+    $("#qrcodeDiv").qrcode({
+                width: width,
+                height:height,
+                text: "http://www.baidu.com"
+        });
+     //画logo
+         $("#qrcodeDiv canvas")[0].getContext('2d').drawImage($("#logoImg")[0], x, y, lw, lh);
+
+</script>
+    
+</body>
+</html>

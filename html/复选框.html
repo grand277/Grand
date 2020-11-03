@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <head>
+        <script type="text/javascript">
+        window.onload=function(){
+            var ck = document.getElementsByName('box');
+            var table = document.getElementsByTagName('table')[0];
+            var len = ck.length;
+            var index=0;
+            for(var i=0;i<len;i++)
+            {
+                ck[i].onclick=function()
+                {
+                    index = this.parentElement.parentElement.rowIndex;
+                    var temptr = table.rows[index];
+                    var llen = temptr.children.length;
+                                  
+                    for(var k=0;k<llen;k++)
+                    {
+                         if(this.checked)
+                         {
+                              temptr.children[k].children[0].checked=true;
+                         }
+                         else
+                         {
+                              temptr.children[k].children[0].checked=false;
+                         }
+                    }
+                     
+                };
+            }
+        };
+        </script>
+         
+         
+        </head>
+         
+         
+        <body>
+          
+        <table>
+            <tr>
+                <td>
+                    <input type="checkbox" name ="box" id ="box1" value="" />a
+                </td>
+                <td>
+                    <input type="checkbox" name ="box" id ="box2" value="" />b
+                </td>
+            </tr>
+            <tr>
+                <td>
+                      <input type="checkbox" name ="box" id ="box3" value="" />c
+                </td>
+                <td>
+                    <input type="checkbox" name ="box" id ="box4" value="" />d
+                </td>
+            </tr>
+        </table>
+          
+         
+        </body>
+</body>
+</html>

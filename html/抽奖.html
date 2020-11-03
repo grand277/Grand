@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style type=text/css> .DonforAll{Float:Left;Width:333px;} .DonforAll
+    .DonforKj{Float:left;Width:110px;height:60px;Padding-Top:30px;Margin:1px auto auto
+    1px;BackGround:#D6F271;color:#156A00;Font-Weight:600;text-align:center;}
+    .DonforXs{Float:Left;Width:100%;Font-Weight:600;Font-Size:14px;Height:auto;Clear:both;Color:#ff0000;Padding:0 0 20px
+    0;} .Donfor{Float:Left;Width:100%;} </style> 
+    <script language=javascript>
+        var all = 8;
+        var aa;
+        //document.getElementById("d0").innerHTML="<input type=button value='抽奖'  onclick='doexe()'>";
+        //document.getElementById("d0").innerHTML +=" <input type=button value='停止'  onclick='doexit()'>";
+        function doexe() {
+            var a = parseInt(Math.random() * 8) + 1;
+            var t = parseInt(Math.random() * 30) + 80;
+            var d = 1;
+            document.getElementById("cjan").style.display = "none";
+            document.getElementById("listjp").innerHTML = "<br><br><span style='color:#ff0000;'>抽奖中，请等待····<br><br></span>";
+            document.getElementById("aa").value = a;
+            document.getElementById("dd").value = d;
+            document.getElementById("tt").value = t;
+            aa = setTimeout("turn()", 200);
+        }
+        function reexe() {
+            var a = parseInt(Math.random() * 8) + 1;
+            var t = parseInt(Math.random() * 30) + 80;
+            var d = 1;
+            document.getElementById("cjan").style.display = "none";
+            document.getElementById("aa").value = a;
+            document.getElementById("dd").value = d;
+            document.getElementById("tt").value = t;
+            for (var i = 1; i <= all; i++) {
+                //document.getElementById("d"+i).innerHTML="";
+                document.getElementById("d" + i).style.backgroundColor = "#D6F271";
+                document.getElementById("d" + i).style.color = "#ffffff";
+            }
+            aa = setTimeout("turn()", 200);
+        }
+        //a 中奖号
+        //c 转数
+        //t 统计数
+        //d 转的当前号
+        function turn() {
+            var a = parseInt(document.getElementById("aa").value);
+            var d = parseInt(document.getElementById("dd").value);
+            var t = parseInt(document.getElementById("tt").value);
+            if (t == 1) {
+                for (var i = 1; i <= all; i++) {
+                    if (i == a) {
+                        //document.getElementById("d"+i).innerHTML="<b>中奖了<br>哈哈</b>";
+                        document.getElementById("d" + i).style.backgroundColor = "951700";
+                        document.getElementById("d" + i).style.color = "#ffffff";
+                        document.getElementById("listjp").innerHTML = "<br><br><span style='color:#ff0000;'>恭喜您，您所中的奖品是：" + document.getElementById("d" + i).innerHTML + "<br><br></span>";
+                    } else {
+                        //document.getElementById("d"+i).innerHTML="";
+                        document.getElementById("d" + i).style.backgroundColor = "#D6F271";
+                        document.getElementById("d" + i).style.color = "#156A00";
+                    }
+                    document.getElementById("d0").innerHTML = "<input type=button value='重来' id=cjan  onclick='reexe()'><input type=button value='停止'  onclick='doexit()'>";
+                }
+            } else {
+                //alert(t);
+                if (d > all) d = 1;
+                for (var i = 1; i <= 8; i++) {
+                    if (i == d) {
+                        document.getElementById("d" + i).style.backgroundColor = "951700";
+                        document.getElementById("d" + i).style.color = "#ffffff";
+                    } else {
+                        document.getElementById("d" + i).style.backgroundColor = "#D6F271";
+                        document.getElementById("d" + i).style.color = "#156A00";
+                    }
+                }
+                d++;
+            }
+            t--;
+            document.getElementById("aa").value = a;
+            document.getElementById("dd").value = d;
+            document.getElementById("tt").value = t;
+            if (t == 0) {
+                document.getElementById("cjan").style.display = "";
+                clearTimeout(aa);
+            } else {
+                if (t > 60) {
+                    //alert(t);
+                    aa = setTimeout("turn()", 100);
+                } else {
+                    if (t > 20) {
+                        aa = setTimeout("turn()", 200);
+                    } else {
+                        aa = setTimeout("turn()", 500);
+                    }
+                }
+            }
+        }
+        function doexit() {
+            document.getElementById("cjan").style.display = "";
+            document.getElementById("listjp").innerHTML = "<br><br><span style='color:#ff0000;'>抽奖被中断，无奖项····<br><br></span>";
+            clearTimeout(aa);
+        }
+    </script>
+
+    <body>
+        <input type=hidden id=aa value=''>
+        <input type=hidden id=dd value=''>
+        <input type=hidden id=tt value=''>
+        <div class=DonforAll>
+            <div class=DonforKj id="d1">洗衣粉</Div>
+            <div class=DonforKj id="d2">冰箱</Div>
+            <div class=DonforKj id="d3">洗衣机</Div>
+            <div class=DonforKj id="d8">平板</Div>
+            <div class=DonforKj id="d0" style='text-align:center;color:#2E8600;font-weight:600;cursor:pointer;'>
+                <input type=button value='抽奖' id=cjan onclick='doexe()'><input type=button value='停止'
+                    onclick='doexit()'>
+            </div>
+            <div class=DonforKj id="d4">DV</Div>
+            <div class=DonforKj id="d7">数码相机</Div>
+            <div class=DonforKj id="d6">IPhone5</Div>
+            <div class=DonforKj id="d5">液晶电视</Div>
+        </div>
+        <div class=DonforXs>抽奖结果如下：</div>
+        <div id=listjp class=DonforXs>请抽奖或重来-----未抽奖状态</div>
+    </body>
+
+</html>

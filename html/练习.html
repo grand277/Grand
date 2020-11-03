@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>355345634</div>
+    <style>
+        .container > div{float:left;width:50px;border:solid 1px #999;margin-right:5px}
+         .container > div:nth-of-type(6n+1) {clear:left;}
+    </style><div class="container">
+        <script>
+            var l = Math.ceil(Math.random() * 30);
+            for (var i = 0; i < l; i++) document.write('<div>' + (i+1) + '</div>')
+        </script>
+    </div>
+</body>
+<script>
+    var obj = {
+        brand: "奥玛",//品牌
+        size: 60,//尺寸
+        price: 900,//价格
+    }
+   // console.log(obj["brand"]); //访问obj对象的brand属性
+    // console.log(obj); //访问obj对象的brand属性
+
+
+    console.log(navigator.userLanguage);
+    if (navigator.language) {
+var language = navigator.language;
+}
+else {
+var language = navigator.browserLanguage;
+}
+// document.write(language)
+
+
+
+
+var str = "a,b,c,d,e";
+var arr = str.split(","); // split 分割后就是一个数组，你也可以在分割后使用join来将分割后的字符串转换成你自己想要的格式的字符串
+// console.log(arr);
+
+
+//赋值
+var list_map = new Array();
+for ( var i = 0; i < 10; i++) {
+  list_map.push({baidux:'baidux'+i,baiduy:'baiduy'+i});
+}
+// console.log(list_map);
+
+
+
+var qrcode = new QRCode("test", {
+    text: "http://www.baidu.com",
+    width: 128,
+    height: 128,
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H
+});
+console.log(qrcode);
+
+</script>
+</html>

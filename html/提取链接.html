@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function IsURL(){
+           message = document.getElementById("service").value;
+           var reg =  /(http[s]?:\/\/([\w-]+.)+([:\d+])?(\/[\w-\.\/\?%&=]*)?)/gi;
+         done_message = message.replace(reg, function($1){
+          return "<a href='" + $1.toLowerCase() + "' target='_blank'>" + $1.toLowerCase() + "</a>";
+         });
+           document.getElementById("url").innerHTML = done_message;     
+        }
+        
+        </script>
+          <form name="form2" method="post" action="">
+              <input name="service" id="service" value="" type="text">
+              <input name="service_i" id="service_i" value="button" type="button" onclick="IsURL()"><br>
+              <div id="url">here</div>
+          </form>
+</body>
+</html>

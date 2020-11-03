@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id='id'>hello world</span><input type='button' onClick='copy("id")' value='点击复制内容' />
+<script>
+    function copy(id) {
+        var Url2=document.getElementById(id).innerText;
+        console.log(oInput)
+        var oInput = document.createElement('input');
+        oInput.value = Url2;
+        document.body.appendChild(oInput);
+
+console.log(oInput)
+
+        oInput.select(); // 选择对象
+        document.execCommand("Copy"); // 执行浏览器复制命令
+        oInput.className = 'oInput';
+        oInput.style.display='none';
+        console.log("复制成功");
+    }
+
+
+
+
+
+
+
+
+// 支持换行
+    function copyContent() {
+      var name = '姓名：' + $('#name').text() + " \n";
+      var detail = '详细地址：' + $('#detail').text() + " \n";
+      var city = '城市：' + $('#city').text() + " \n";
+      var postcode = '邮编：' + $('#postcode').text() + " \n";
+      var country = '国家：United Kingdom' + " \n";
+      var telephone = '电话：' + $('#telephone').text() + " \n";
+      var content = name.concat(detail, city, postcode, country, telephone);
+ 
+      // 使用textarea支持换行，使用input不支持换行
+      const textarea = document.createElement('textarea');
+      textarea.value = content;
+      document.body.appendChild(textarea);
+ 
+      textarea.select();
+      if (document.execCommand('copy')) {
+        document.execCommand('copy');
+        alert(content);
+      }
+      document.body.removeChild(textarea);
+    }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
