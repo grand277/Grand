@@ -1,0 +1,19 @@
+git.zip
+bullfight_web/.idea/bullfight_web.iml
+bullfight_web/.idea/
+bullfight_web/.idea/deployment.xml
+bullfight_web/venv/
+chat_backend/chat/.idea/chat.iml
+chat_backend/chat/.idea/deployment.xml
+chat_backend/chat/.idea/
+tongji/.idea/
+tongji/qf_tongji/.idea/
+unity_pay/.idea/
+bullfight_web/share/__init__.pyc
+# .gitignore
+
+../.vscode/
+.idea/
+../.idea/
+../.idea
+../.idea/vcs.xml
