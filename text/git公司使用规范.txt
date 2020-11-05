@@ -1,0 +1,35 @@
+git使用规范
+
+commit 要求
+
+务必详细检查每个文件，每行修改点。如果发现不是自己要修改的部分代码，做丢弃处理
+必须写清楚修改的特性。严禁空注释。
+严禁提交无用的调试逻辑
+自动生成文件/依赖本地环境的文件，不得提交到版本库。(大部分已经在gitignore中过滤
+不要遗漏新增的文件，注意看git的文件状态 merge(合并)要求
+如果发现confict（冲突），一定要联系与之冲突的代码负责人，一起进行冲突。如果不知道是谁的代码，严禁自己随意解决 新特性开发
+新特性开发，务必开分支。
+养成及时提交的好习惯，即进行commit，然后 git pull 进行merge。之后git push
+特性完成后，给相应的产品体验，并交付测试人员测试。
+测试完成后，merge(合并)到目标分支(master/release)。
+在编译机上编译调试，确保没有问题。 注意: 如果中途需要将master/release的代码修改放到自己分支上，请使用rebase(变基)而不是merge(合并)
+禁止未经开发组长同意情况下将代码合入master分支
+git分支开发
+
+日常开发中会有如下几类分支:
+
+master 主干，所有的出包，都应该在这个分支上，并且每次出完应该打上tag
+
+release.xx 下个版本准备用来发布的分支 xx表示version。
+
+feature.xx.yyy 特性分支。并且feture是从release.xx分支切出， yyy表示具体特性
+
+bugfix.xx bugfix分支 以下挨个说明:
+
+release.xx 在确定下个版本之后，就要从master上拉出一个新的分支-release.$version，比如下个版本是91，那么就是 release.91。 一般与上个版本差10个版本为宜，防止ios审核打回要升级版本号的问题。 另外，偶数为测试版本，奇数为上线版本。所以平时的测试包，就打90版本。 在最终所有feature都合入release分支之后，测试没有问题，将release合并入master。之后在主干上继续测试。 注意服务器此时master不能再更新外网，一直到完全测试通过。 注意： 本来在release合并入master之前，还应该有一次rebase的操作，之所以不写，原因如下： a. rebase会导致之前的feature合并记录丢失。 b. rebase会导致commit列表重置，从而导致从release拉出来的feature，没法再合入rebase之后的release。
+
+feature.xx.yyy 特性分支，即对应产品提出的特性修改。 分为需要立即上线的和等release一起上线的。
+
+如果是需要立刻上线生效，那么就在master上切出，并最终合入master。 如果是需要随releaes分支一起上线，那么就在release分支切出，并最终合入release分支
+
+bugfix.xx 修改bug。 基本都是修改master的bug，那就从master上切入即可。

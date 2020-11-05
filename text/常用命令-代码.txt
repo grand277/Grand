@@ -1,0 +1,77 @@
+vi  查看文件
+打印某一个接口的
+tail * -f | grep 'grant_activity_reward' -E -A 20 -B 1
+logger.debug("     ")     PY打印
+cd:    logs              tail * -f              py打印
+pwd  查看目录路径
+rm   删除
+ifconfig    查看服务器数据库（172.16.0.16     27内网
+git clone 项目地址
+git merge 分支名     合并该分支到当前分支
+git rebase 主干分支      相当于当前分支刚从主干切出来
+git reset --hard HEAD
+git clean -f -d
+git pull
+git restore 路径   撤销修改操作
+git log -p      git diff   查看修改内容（git log -p  上传的修改内容）
+ git push --set-upstream origin           分支名   （上传）
+pip install phone       安装库 root用户装库
+
+修改分支名称总共分三步：
+一  git branch -m old_branch new_branch   修改本地分支
+二  git push origin :old_branch  删除远程分支
+三  git push --set-upstream origin new_branch 新增远程分支 
+
+required     必要
+!important       css重要
+parseInt           转数字
+$('#epay_text').on("keyup", function () {})  也是实时监听
+
+keyup  实时监听     focus  获取焦点时的事件    blur  失去焦点时的事件
+change   更改，回车   click  点击
+
+visibility:hidden;占位隐藏
+visibility:visible;显示
+
+checked  选中
+type="checkbox"   正方
+type="radio"
+var arr = str.split(",");   逗号 分隔成数组
+chboxVal.push(checkBox[i].value)//将被选择的值追加到  列表
+multiple   多（选择框的时候）
+float: right;    浮动  left左
+position: fixed;    位置，固定
+position: relative;    相对定位  当前
+position: absolute;    绝对定位  不占位浮动
+label标签        disabled    禁用
+label标签           checked   默认
+$("#success_frame").modal();          弹框
+$("#loading").modal("show");   //加载中动画效果 打开弹框
+$("#loading").modal("hide");    关闭弹框
+$("#success_frame").click();          点击
+$('#user' + i).trigger("click");
+{#$("#success_frame").show().delay(3000).fadeOut();#}      三秒后隐藏
+text-align:center;               水平居中
+vertical-align:middle;             垂直居中
+// 关闭重置
+            $('#diamondModal').on('hidden.bs.modal', function () {
+                {#window.location.reload();#}
+            });
+&&是“与”的意思
+||是“或者”的意思
+or 要么 逻辑或
+and 和
+onkeyup="this.value=this.value.replace(/[^\d]/g,'')"                           只能输入数字
+onkeyup="this.value=this.value.replace(/\D/g,'')"                    只能输入数字
+onkeyup="this.value=this.value.replace(/[^\-?\d]/g,'')"                数字加减号
+onkeyup="this.value=this.value.replace(/[^\d\,]/g,'')"            数字加逗号
+onkeyup="value=value.replace(/[\u4e00-\u9fa5]/ig,'')"         不能输入汉字
+onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')"      数字加小数点
+onkeyup="this.value=(this.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3'))"        两位小数
+
+onkeyup="this.value=(this.value.replace(/\D/g,''))"
+onkeyup="this.value=this.value.replace(/\D/g,'')"
+
+ 来扑克
+手牌详情：中文 正数红色 负数绿色（英文相反）
+16573211471

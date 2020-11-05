@@ -1,0 +1,31 @@
+// sessionStorage.clear();
+
+    var zone_se = sessionStorage.getItem('zone');
+    var phone = sessionStorage.getItem('phone');
+    $("#phone").val(phone);
+    $("#zone_tel").html('+' + zone_se);
+    for (let index = 0; index < zone.length; index++) {
+        if (zone[index].tel == zone_se) {
+            $("#zone_name").html(zone[index].name);
+        }
+    }
+
+    var phone_list = Array();
+    if (sessionStorage.getItem('phone_list')) {
+        phone_list = eval('(' + HtmlUtil.htmlDecode(sessionStorage.getItem('phone_list')).replace(/u'/g, "'") + ')')
+        console.log(sessionStorage.getItem('phone_list'))
+        console.log(phone_list)
+        for (var i = 0; i < phone_list.length; i++) {
+            // total += phone_list[i];
+            $("#grand_g").append("<option>" + phone_list[i].phone + "</option>")
+        }
+    }
+
+
+
+
+
+    sessionStorage.setItem('zone', zone);
+                    sessionStorage.setItem('phone', phone);
+                    phone_list.push({"zone": zone, "phone": phone});
+                    sessionStorage.setItem('phone_list', JSON.stringify(phone_list));

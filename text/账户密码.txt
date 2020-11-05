@@ -1,0 +1,91 @@
+外网测试环境， CRM我添加了一个账号 test test@outer 这个账号只有一个权限， 就是0级账号的权限
+
+服务器环境
+MG. CRM. 后台账号。admin admin@inner
+游戏: http://13.76.188.167:8801/mg/
+CRM: http://13.76.188.167:8809/crm/
+应用: http://207.46.229.4:8609/
+ssh : user_xh user_xh@inner
+root root@inner
+
+内网230环境：
+192.168.7.230 机器： 部署游戏项目，聊天项目， CRM项目 ， redis服务， mysql服务， mongodb服务
+192.168.7.240 机器： 部署联盟APP项目
+192.168.7.140 机器： 部署代理后台项目，代理后redis，代理后台mysql 
+
+每台机器中ssh用户 user_xh 密码 user_xh@inner
+用户 root 密码 root@inner
+django后台 admin 密码 admin@inner
+各自保存下信息
+内网环境 游戏后台 http://192.168.7.230:8801/mg/
+CRM 后台： http://192.168.7.230:8809/crm/
+内网环境客户端请求地址 http://192.168.7.240:8609/xh_app/service.php
+
+服务器环境
+内网27环境：
+134.175.144.27（172.16.0.16） 机器： 部署游戏项目，聊天项目， CRM项目 ， redis服务， mysql服务， mongodb服务
+118.89.28.106 （172.16.0.12）机器： 部署联盟APP项目
+111.230.136.57（172.16.0.14）机器： 部署代理后台项目，代理后redis，代理后台mysql 
+
+每台机器中ssh用户 user_xh 密码 user_xh@inner
+用户 root 密码 root@inner
+django后台 admin 密码 admin@inner
+
+
+密码：xh_service@1101 账号：1101
+官方客服的
+10000010096 密码：2018@x123456
+社区客服d
+
+游戏mg后台地址: http://134.175.144.27:8801/mg/ admin admin@inner
+CRM后台地址: http://134.175.144.27:8809/crm/ admin admin@inner
+
+客户端API接口请求地址: http://118.89.28.106:8609/xh_app/service.php
+
+
+
+外网测试服： 游戏：13.76.128.176
+应用： 52.163.207.94
+联盟应用外网服务器
+ip:	52.163.207.94
+username:	user_xh
+passwd:	user_xh@2018
+union root: Unionpoker!@#2018
+
+
+游戏外网服务器
+ip:	13.76.128.176
+username:	user_xh
+passwd:	user_xh
+game root: Firepoker!@#2018
+
+文档中心，代理后台
+13.67.113.146
+user_xh user_xh
+root: Unionpoker!@#2018
+
+外网测试服代理后台：http://agent-web-test.firepokerpro.com/crm/
+外网测试CRM后台：http://app-test.firepokerpro.com/crm/
+
+外网测试服2（预发布环境）：
+13.76.211.157 机器 部署游戏项目，聊天项目， CRM项目 ， redis服务， mysql服务， mongodb服务
+20.184.57.197 机器 部署联盟APP项目， 部署代理后台
+
+每台机器中ssh用户 user_xh 密码 user_xh@outer
+用户 root 密码 root@outer
+
+代理后台地址： http://agent-web-test2.firepokerpro.com/crm/
+游戏mg后台地址: http://game-test2.firepokerpro.com/mg/ admin admin@outer
+CRM后台地址: http://app-test2.firepokerpro.com/crm/ admin admin@outer
+
+客户端API接口请求地址: https://unionapp-test2.firepokerpro.com/xh_app/service.php
+agent-web-test.firepokerpro.com
+代理后台管理
+app-test.firepokerpro.com
+登录 | Django 站点管理员
+agent-web-test2.firepokerpro.com
+代理后台管理
+game-test2.firepokerpro.com
+登录 | Django 站点管理员
+app-test2.firepokerpro.com
+登录 | Django 站点管理员
