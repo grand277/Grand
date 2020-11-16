@@ -15,7 +15,7 @@ http://207.46.229.4:8919/crm/lpoker
 外网一（外网2就在test后面加2 就是test2    官方客服密码2 service_chat@1101）
 MG（admin，admin@outer）
 http://game-test.firepokerpro.com/mg/
-CRM（admin，admin@outer；账号test，密码test@outer）
+CRM（admin，admin@outer；账号test，密码test@outer）user_xh fpokerapp
 http://app-test.firepokerpro.com/crm/
 官方客服（1101，xh_service@1101）
 http://unionapp-test.firepokerpro.com/web_chat/login/user_sys_login

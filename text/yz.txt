@@ -1,0 +1,53 @@
+cdl去日志路径
+cds去游戏服务路径
+cdcs去聊天路径
+cdcl去聊天日志路径
+
+13.76.155.24 端口 22
+root
+Fpwlkj2018!
+
+用户名： 'admin' 密码： 'admin#2020'
+
+{
+"name": "test",
+"host": "104.215.192.114",
+"protocol": "sftp",
+"port": 2222,
+"username": "root",
+"password": "hyz2018",
+"remotePath": "/data/release/bullfight_web",
+"connectTimeout":100000,
+"uploadOnSave": true,
+"ignore": [
+"/.vscode/",
+"/.git/",
+"**/.DS_Store"
+],
+"watcher": {
+"files": "glob",
+"autoUpload": true,
+"autoDelete": true
+}
+}
+
+hlqp.pro
+hlqp.one
+
+官网主域名：
+hlqp.pro
+hlqp.one
+
+官网落地页域名：
+bull880.com
+bull881.com
+bull882.com
+bull883.com
+
+H5支付登录主域名：
+https://recharge.dl-inmv.com/web_rw_login
+备用域名：
+http://p9pg5c.dl-6ptpxc.com/web_rw_login
+http://6ekyui.dl-xdux3w.com/web_rw_login
+http://mvsdqt.dl-0rb8at.com/web_rw_login
+http://ajb4sf.dl-qfds6u.com/web_rw_login
