@@ -1,5 +1,29 @@
-COP750（web页面）
-首页数据+用户数据	1
-小游戏账户	1
-社区管理跳转+0级账户交易记录	3
-代理后台
+首页
+index.html
+
+render_func(data=dict(
+online_data=dict(online_user_count=online_user_count, # 在线人数
+play_game_count=play_game_count, # 正在游戏人数
+play_desk_count=play_desk_count, # 正在进行牌局数
+new_users=new_users), # 今日注册
+online_user_line=online_user_line, # 在线人数
+desk_count_line=desk_count_line, # 牌局数
+reg_user_line=reg_user_line, # 注册人数
+playing_user_line=playing_user_line, # 在玩人数
+tc_online_user_line=tc_online_user_line, # 德州扑克在线曲线图
+tc_online_user_count=tc_online_user_count, # 德州扑克在线人数
+tc_total_buyin=tc_total_buyin, # 德州扑克当前总买入
+br_online_user_line=br_online_user_line, # 百人德州在线曲线图
+br_online_user_count=br_online_user_count, # 百人德州在线人数
+br_total_buyin=br_total_buyin, # 百人德州当前总买入
+lp_online_user_line=lp_online_user_line, # 幸运点数在线曲线图
+lp_online_user_count=lp_online_user_count, # 幸运点数在线人数
+lp_total_buyin=lp_total_buyin, # 幸运点数当前总买入
+bj_online_user_line=bj_online_user_line, # 21点在线曲线图
+bj_online_user_count=bj_online_user_count, # 21点在线人数
+bj_total_buyin=bj_total_buyin, # 21点当前总买入
+tc_total_buyin_member=tc_total_buyin_member, # 德州牛仔当前买入人数
+br_total_buyin_member=br_total_buyin_member, # 百人德州当前买入人数
+lp_total_buyin_member=lp_total_buyin_member, # 幸运手牌当前买入人数
+bj_total_buyin_member=bj_total_buyin_member, # 21点当前买入人数
+)
