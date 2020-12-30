@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.write(Math.floor(5.80) + "<br>");//取整或下舍入5
+        document.write(Math.round(5.80) + "<br>");//四舍五入，取整数6
+        document.write(Math.round((5.80 * 100) / 100) + "<br>");//四舍五入，保留两位小数6
+        document.write(Math.ceil(5.10) + "<br>");//上舍入6
+        document.write(Math.abs(-5.80) + "<br>");//取绝对值5.8
+        document.write(Math.max(55, 58) + "<br>");//返回两个值中最大数58
+        document.write(Math.min(55, 58) + "<br>");//返回两个值中最小数55
+
+        //向下取整 保留两位小数
+        var num1 = 123.8976;
+        var result = Math.floor(num1);
+        console.log(result);  //123
+
+        var result1 = Math.floor(num1 * 100);
+        console.log(result1);  //向后推两位 12389
+
+        var result2 = Math.floor(num1 * 100) / 100;
+        console.log(result2)  //向下取整保留两位小数  123.89
+
+        // 10一位数，100两位数字，数字字符串都可以，不加零的方法
+        var m = '3.40'
+        // 向下取整保留两位小数
+        console.log(Math.floor(m * 1000) / 1000)
+        // 向上取整保留一位小数
+        console.log(Math.ceil(m * 10) / 10)
+        // 四舍五入保留两位小数
+        console.log(Math.round(m * 100) / 100)
+
+        var num = new Number(13.329);
+        console.log(num.toFixed(2))//四舍五入两位小数，不够补0
+    </script>
+</body>
+
+</html>
