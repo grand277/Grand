@@ -1,6 +1,8 @@
 vi  查看文件
 打印某一个接口的
+tail * -f | grep 'yyyy' -E -A 10 -B 1
 tail * -f | grep 'grant_activity_reward' -E -A 20 -B 1
+tail -f * | grep 'XXXXXXXXXXXX' -C 5
 logger.debug("     ")     PY打印
 cd:    logs              tail * -f              py打印
 pwd  查看目录路径
@@ -53,6 +55,9 @@ $('#user' + i).trigger("click");
 {#$("#success_frame").show().delay(3000).fadeOut();#}      三秒后隐藏
 text-align:center;               水平居中
 vertical-align:middle;             垂直居中
+btn-default    按钮白色
+btn-primary  深蓝
+btn-link  类似于a标签
 // 关闭重置
             $('#diamondModal').on('hidden.bs.modal', function () {
                 {#window.location.reload();#}
@@ -72,6 +77,4 @@ onkeyup="this.value=(this.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3'))"   
 onkeyup="this.value=(this.value.replace(/\D/g,''))"
 onkeyup="this.value=this.value.replace(/\D/g,'')"
 
- 来扑克
-手牌详情：中文 正数红色 负数绿色（英文相反）
-16573211471
+style="mso-number-format:'\@';"	导出表格不展示科学计算法
