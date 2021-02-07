@@ -1,4 +1,5 @@
-vi  查看文件
+tail * -f | grep 'CRITICAL|Traceback' -E -A 30 -B 1       打印错误
+vi vim cat  查看文件
 打印某一个接口的
 tail * -f | grep 'yyyy' -E -A 10 -B 1
 tail * -f | grep 'grant_activity_reward' -E -A 20 -B 1
@@ -78,3 +79,14 @@ onkeyup="this.value=(this.value.replace(/\D/g,''))"
 onkeyup="this.value=this.value.replace(/\D/g,'')"
 
 style="mso-number-format:'\@';"	导出表格不展示科学计算法
+
+$ python manage.py shell
+Python 2.7.8 (default, Mar 30 2020, 14:05:30)
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-39)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>> from share.cache.task_data import UserOfficialTaskStartTimeCacheNew
+>> UserOfficialTaskStartTimeCacheNew.get_user_task_start_time(10227)
+1600272000
+>> UserOfficialTaskStartTimeCacheNew.del_user_start_time(10225)
+>> UserOfficialTaskStartTimeCacheNew.del_user_start_time(10227)

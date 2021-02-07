@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        @media screen and (max-width: 320px) {
+            html {
+                font-size: 12px !important;
+            }
+        }
+
+        @media screen and (min-width: 321px) and (max-width: 767px) {
+            html {
+                font-size: 16px !important;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            html {
+                font-size: 18px !important;
+            }
+        }
+
+        div {
+            background-color: red;
+            width: 1rem;
+            height: 1rem;
+            font-size: 1rem;
+        }
+    </style>
+    <div>我是div</div>
+    <script>
+        if (window) {
+            function setRem() {
+                const curWidth = document.documentElement.clientWidth || window.screen.width;
+                const basicWidth = 375;
+                const basicFontSize = 10;
+                const calcFontSize = curWidth / basicWidth * basicFontSize;
+                document.documentElement.style.fontSize = calcFontSize + 'px';
+            }
+
+            setRem();
+            window.addEventListener('resize', function () {
+                setRem();
+            });
+        }
+    </script>
+</body>
+
+</html>

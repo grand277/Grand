@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.addEventListener('load', function () {
+            // 设置图片的地址
+            var imgSrcs = [
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/1.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/2.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/3.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/4.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/5.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/6.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/7.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/8.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/9.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/10.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/11.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/12.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/13.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/14.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/15.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/16.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/17.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/18.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/19.png',
+                '{{ request.MEDIA_CDN }}/static/img/task/loading/20.png',
+            ];
+            // 设置滚动间隔时间(毫秒)
+            var interval = 100;
+            var viewer = document.getElementById('viewer_loading');
+            var current = 0;
+            var len = imgSrcs.length;
+            var setImage = function () {
+
+                viewer.src = imgSrcs[current];
+                current = ++current > len - 1 ? 0 : current;
+
+            };
+            setImage();
+            setInterval(setImage, interval);
+        });
+
+
+        var banners = [
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/1.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/2.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/3.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/4.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/5.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/6.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/7.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/8.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/9.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/10.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/11.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/12.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/13.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/14.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/15.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/16.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/17.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/18.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/19.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/20.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/21.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/22.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/23.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/24.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/26.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/27.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/28.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/29.png?v=1.0',
+            '{{ request.MEDIA_CDN }}/static/img/task/receive_zh/30.png?v=1.0',
+        ]; // 图片地址
+        var counter = 0;
+
+        function cycle() {
+            counter++;
+            if (counter == banners.length) {
+                clearInterval(interval);    // 加这句的意思是，只轮播一轮。就停，性能提升
+                counter = 0;
+            }
+            document.getElementById("viewer").src = banners[counter];
+        }
+
+
+        // 打开弹窗事件
+        $('#myModal_jiangli').on('show.bs.modal', function () {
+            interval = setInterval(cycle, 70);  //interval是定义的全局，重复运行cycle函数，周期70ms
+        });
+
+        // 退出弹窗事件
+        $('#myModal_jiangli').on('hide.bs.modal', function () {
+            clearInterval(interval);    //结束重复运行
+            counter = 0;    //图片恢复到第一张
+        });
+    </script>
+</body>
+
+</html>
