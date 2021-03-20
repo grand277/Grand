@@ -19,6 +19,7 @@ git restore 路径   撤销修改操作
 git log -p      git diff   查看修改内容（git log -p  上传的修改内容）
  git push --set-upstream origin           分支名   （上传）
 pip install phone       安装库 root用户装库
+git clean -f     去掉pyc
 
 修改分支名称总共分三步：
 一  git branch -m old_branch new_branch   修改本地分支

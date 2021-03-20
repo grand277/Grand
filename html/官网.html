@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        color: white;
+    }
+
+    .head_head {
+        display: flex;
+        align-items: center;
+        height: 13rem;
+        padding-left: 36rem;
+        font-size: 2rem;
+        background-color: #0C0C0C;
+    }
+
+    .head_icon_name {
+        color: #F5E5C6;
+        font-size: 2.6rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .head_icon_name>img {
+        width: 8.5rem;
+        margin-right: 1rem;
+    }
+
+    .head_cooperation,
+    .head_help,
+    .head_lang {
+        margin-left: 5rem;
+    }
+
+    .head_lang>img:nth-child(1) {
+        width: 2rem;
+    }
+
+    .head_lang>img:nth-child(3) {
+        width: 1.1rem;
+    }
+
+    .head_btn {
+        display: flex;
+        margin-left: 35rem;
+    }
+
+    .head_btn>div {
+        width: 13rem;
+        height: 4.4rem;
+        border-radius: 2.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .head_btn_login {
+        background-color: #333439;
+        margin-right: 2rem;
+    }
+
+    .head_btn_registered {
+        background-color: #B32824;
+    }
+
+    .head_body {
+        display: flex;
+        align-items: center;
+        height: 6rem;
+        background-color: #1A1A1A;
+        padding-left: 36rem;
+    }
+
+    .head_body>div:nth-of-type(odd) {
+        background-color: #2F387B;
+        width: 14rem;
+    }
+
+    .head_body>div:nth-of-type(even) {
+        /* background-color: #3F4993; */
+    }
+
+    /* 移动端 */
+    @media screen and (max-width : 767px) {
+        .img {
+            display: block;
+            margin: 0 auto;
+            width: 14.15rem;
+        }
+    }
+
+    /* PC端 */
+    @media screen and (min-width: 768px) {}
+</style>
+
+<body>
+    <div>
+        <div class="head_head">
+            <div class="head_icon_name">
+                <img src="../img/icon.png" />
+                <span>扑克之城</span>
+            </div>
+            <div class="head_cooperation">合作招商</div>
+            <div class="head_help">帮助</div>
+            <div class="head_lang">
+                <img src="../img/2支 拷贝 2.png" />
+                <span>简体</span>
+                <img src="../img/direction_right.png" />
+            </div>
+            <div class="head_btn">
+                <div class="head_btn_login">登录</div>
+                <div class="head_btn_registered">立即加入</div>
+            </div>
+        </div>
+        <div class="head_body">
+            <div>主页</div>
+            <div></div>
+            <div>现金游戏</div>
+            <div></div>
+            <div>充值提现</div>
+            <div></div>
+            <div>高额福利</div>
+            <div></div>
+            <div>如何玩</div>
+        </div>
+    </div>
+</body>
+<script>
+    if (window) {
+        // PC端是1920标准尺寸画的效果图，移动端是750二倍画布画的效果图
+        function setRem() {
+            const curWidth = document.documentElement.clientWidth || window.screen.width;
+            var basicWidth;
+            if (curWidth > 768) {
+                basicWidth = 1920;
+            } else {
+                basicWidth = 375;
+            }
+            const basicFontSize = 10;
+            const calcFontSize = curWidth / basicWidth * basicFontSize;
+            document.documentElement.style.fontSize = calcFontSize + 'px';
+        }
+        setRem();
+        window.addEventListener('resize', function () {
+            setRem();
+        });
+    }
+</script>
+
+</html>
