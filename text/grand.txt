@@ -1,38 +1,24 @@
+Linux  
+find -name
 res   code   msg   err_msg
 
 1611543868 
 
 featrue.master.task_manager_horizontal
 featrue.master.web_many_language
+featrue.master.banner_change_project
 
 LoginAdvertisingMapCache(9).get_all_data(1)
 
 
-提现手续费增加字段（withdraw_config）的里面
-VnBank_default_sercharge（越南-银行卡 默认手续费）
-VnMomo_default_sercharge（越南-momo 默认手续费）
-VnBank_service_charge（越南-银行卡 手续费）
-VnMomo_service_charge（越南-momo 手续费）
-
 tail * -f | grep 'user_set_language' -E -A 20 -B 1
 
-http://git.project-d.vip/
-git remote set-url origin http://git.project-d.vip/firepoker_server/xh_texas_backend.git 
 
-//whois.pconline.com.cn
-https://geoip-js.com/js/apis/geoip2/v2.1/geoip2.js
-//geoip-js.com/js/apis/geoip2/v2.1/geoip2.js
-https://geoip-js.com/geoip/v2.1/country/me?referrer=http%3A%2F%2Funionapp-test.firepokerpro.com
+LoginEmail.is_user_register(email='allen277@163.com', channel='LPK_IOS_001')
 
 
-非版本需求
-充值管理+提现管理	1天	Jack
-充提账户及订单查询	1天	Jack
-官方任务CRM+龙虎斗	1.5天+0.5天（联调）	Jack
-官方任务（福利中心）	2天	Grand
-后台需求
-0级账户结构优化+小游戏数据	1天	Jack
-批量封号解封/修改昵称	1天	Jack
-盲注表相关优化	1天	Grand
-mg后台赛事配置支持赛事循环自动上线	0.5天	Grand
-赛事门票优化	1天	Grand
+版本更新字段update_data
+跟launch_icon同层级的字典
+
+
+导出

@@ -1,6 +1,14 @@
 外网测试环境， CRM我添加了一个账号 test test@outer 这个账号只有一个权限， 就是0级账号的权限
+52.163.51.175 10.0.0.11 部署 游戏， 支付， CRM , 官网
+13.67.52.161 10.0.0.12 部署 聊天，代理后台， 应用， 新官网， redis, mysql , mongo
+root cop2013755
+user_xh 密码与root密码一致
 
-服务器环境
+1104
+xh_service@1104
+service_chat@1104（这个）
+
+服务器环境（root密码：cop2013775）
 MG. CRM. 后台账号。admin admin@inner
 游戏: http://13.76.188.167:8801/mg/
 CRM: http://13.76.188.167:8809/crm/
