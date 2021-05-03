@@ -3,59 +3,256 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        .container {
-            width: 40%;
-            height: 300px;
-            overflow: hidden;
-            margin: 100px auto;
-        }
-    </style>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <title>新手福利</title>
+    <script src="../js/jquery.js"></script>
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: PingFang SC;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    img {
+        vertical-align: middle;
+        /* 图片不设置高度会出现白边 设置这个可以去掉白边  */
+    }
+
+    .task {
+        width: 110rem;
+        background-color: #191E39;
+        border-radius: 3rem;
+        position: relative;
+    }
+
+    .task_head {
+        display: flex;
+        height: 20rem;
+        align-items: center;
+    }
+
+    .task_head_icon {
+        width: 8rem;
+        margin: 0 6rem;
+    }
+
+    .task_head_title {
+        width: 64rem;
+        margin-right: 4rem;
+    }
+
+    .task_head_title_main {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #FEFEFE;
+    }
+
+    .task_head_title_vice {
+        font-size: 1.8rem;
+        color: white;
+    }
+
+    .task_head_btn {
+        width: 18rem;
+        height: 4.8rem;
+        line-height: 4.8rem;
+        background: linear-gradient(90deg, #FD7575, #EA5252);
+        border-radius: 2.4rem;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .task_bottom {
+        height: 10rem;
+        background-color: rgba(0, 0, 0, 0.08);
+        border-top: 0.1rem solid #000000;
+        border-radius: 0 0 3rem 3rem;
+        font-size: 3rem;
+        font-weight: bold;
+        color: #FFD99A;
+        line-height: 10rem;
+        padding-left: 20rem;
+    }
+
+    .task_hidd {
+        width: 86rem;
+        height: 30rem;
+        background-color: rgba(35, 61, 135, 0.95);
+        border-radius: 3rem 0 0 3rem;
+        position: absolute;
+        bottom: 0;
+        /* display: none; */
+    }
+
+
+    .hidd_title_1 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #FEFEFE;
+    }
+
+    .hidd_title_2,
+    .hidd_jindu {
+        font-size: 1.8rem;
+    }
+
+    .hidd_jindu {
+        display: flex;
+        margin: 10rem 0 4rem 0;
+    }
+
+    .hidd_jindu_body {
+        width: 50rem;
+        position: relative;
+    }
+
+    .hidd_jindu_bg {
+        height: 0.7rem;
+        background-color: #112253;
+    }
+
+    .hidd_jindu_color {
+        background-color: #F7D69C;
+        height: 100%;
+    }
+
+    .jindu_data {
+        position: absolute;
+        left: 0;
+        top: -0.6rem;
+        transform: translateX(-50%);
+        width: 10rem;
+        text-align: center;
+    }
+
+    .jindu_data_style {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: #112253;
+        margin: 0 auto 1rem;
+    }
+
+    .jindu_current {
+        text-align: center;
+        position: absolute;
+        left: 0;
+        transform: translateX(-50%);
+        top: -8.8rem;
+    }
+
+    .jindu_current_text {
+        width: 14.3rem;
+        height: 6.81rem;
+        background-image: url('../img/news.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding-top: 0.8rem;
+    }
+
+    .jindu_current>img {
+        width: 2.6rem;
+    }
+
+    /* 移动端 */
+    @media screen and (max-width: 768px) {}
+
+    /* PC端 */
+    @media screen and (min-width: 769px) {}
+</style>
 
 <body>
-    <!--   <div class="box">
-    <input type="text" value="1" name="inp">
-  </div> -->
-    <div class="container">
-        <img src="http://13.76.188.167:8809/media/club_banner_icon/59/4a/79/0a5f87c7-eea0-425b-83f7-b583d3594a79.png" alt="">
+    <div class="new_user">
+        <div id="task_list">
+            <div class="task">
+                <div class="task_head">
+                    <img class="task_head_icon" src="../img/icon.png">
+                    <div class="task_head_title">
+                        <div class="task_head_title_main">赢下底池</div>
+                        <div class="task_head_title_vice">
+                            您是扑克门外汉，或需要温故知新？COP扑克之城为您学习玩牌提供万全准备！了解牌组强弱排行：我们有实用的牌组强弱排行指南，因此您只要拿到坚果牌。
+                        </div>
+                    </div>
+                    <div class="task_head_btn">
+                        领取奖励
+                    </div>
+                </div>
+                <div class="task_bottom">活动奖励：123456</div>
+                <div class="task_hidd">
+                    <div class="hidd_title_1">
+                        完成条件
+                    </div>
+                    <div class="hidd_title_2">
+                        您是扑克门外汉，或需要温故知新？COP扑克之城为您学习玩牌提供万全准备！了解牌组强弱排行：我们有实用的牌组强弱排行指南，因此您只要拿到坚果牌，
+                    </div>
+                    <div class="hidd_jindu">
+                        <div class="hidd_jindu_title">
+                            任务进度：
+                        </div>
+                        <div class="hidd_jindu_body">
+                            <div class="hidd_jindu_bg">
+                                <div class="hidd_jindu_color"></div>
+                            </div>
+                            <div class="jindu_list">
+                                <div class="jindu_data">
+                                    <div class="jindu_data_style"></div>
+                                    <div>0</div>
+                                </div>
+                                <div class="jindu_data">
+                                    <div class="jindu_data_style"></div>
+                                    <div>1天</div>
+                                </div>
+                            </div>
+                            <div class="jindu_current">
+                                <div class="jindu_current_text">
+                                    <div>当前完成天数</div>
+                                    <div>（1天）</div>
+                                </div>
+                                <img src="../img/金币图标.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-
-
-
     <script>
-        /*const box = document.querySelector(".box");
-        const inp = document.querySelector(".inp");*/
-
-        /* box.onmouseover = function (ev) {
-           var ev = window.event || ev;
-           var tag = ev.target;
-           tag.onmousewheel = function (ev) {
-             var sc = ev.wheelDelta;
-             console.log(ev.wheelDelta);
-             sc < 0 ? (sc = -1) : sc = 1;
-             console.log(sc)
-             var x = parseInt(tag.value);
-             tag.value = x + sc;
-           }
-         }*/
-
-
-        const container = document.querySelector(".container");
-        const img = document.querySelector("img");
-        var widthW = 100; // 初始化默认宽度
-        img.style.width = `${widthW}%`;  // 赋值默认宽度
-        container.onmouseover = () => {  // 鼠标经过事件
-            img.onmousewheel = (b) => {  // 鼠标滚动事件
-                console.log(b); // 打印 b ，可以看到鼠标滚动得很多信息
-                b.wheelDelta < 0 ? widthW-- : widthW++;  // 其中 wheelDelta 对象的值就是判断滚轮往前滚还是往后滚：   <0 是往后滚， >0是前滚
-                img.style.width = `${widthW}%`;
+        if (window) {
+            // PC端是1920标准尺寸画的效果图，移动端是750二倍画布画的效果图
+            function setRem() {
+                const curWidth = document.documentElement.clientWidth || window.screen.width;
+                var basicWidth;
+                if (curWidth > 768) {
+                    basicWidth = 1920;
+                } else {
+                    basicWidth = 375;
+                }
+                const basicFontSize = 10;
+                const calcFontSize = curWidth / basicWidth * basicFontSize;
+                document.documentElement.style.fontSize = calcFontSize + 'px';
             }
+
+            setRem();
+            window.addEventListener('resize', function () {
+                setRem();
+            });
         }
+
+        // 移入-也会触发点击事件
+        $("#task_list").on("mouseover", '.task', function () {
+            // $(this).find(".task_hidd").stop().slideToggle();
+        });
+        // 移出
+        $("#task_list").on("mouseout", '.task', function () {
+            // $(this).find(".task_hidd").stop().slideToggle();
+        });
+
     </script>
 </body>
 
