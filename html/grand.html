@@ -1,259 +1,293 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>我的奖励</title>
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
 
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
-    <title>新手福利</title>
-    <script src="../js/jquery.js"></script>
-</head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        font-family: PingFang SC;
-    }
+		img {
+			vertical-align: middle;
+		}
 
-    a {
-        text-decoration: none;
-    }
+		body {
+			background-color: #040404;
+		}
 
-    img {
-        vertical-align: middle;
-        /* 图片不设置高度会出现白边 设置这个可以去掉白边  */
-    }
+		.data_info {
+			width: 31.5rem;
+			height: 7rem;
+			background-color: #141414;
+			border-radius: 0.5rem;
+			display: flex;
+			justify-content: space-between;
+			padding: 0 1.5rem;
+			margin: 0 auto 0.5rem;
+			align-items: center;
+		}
 
-    .task {
-        width: 110rem;
-        background-color: #191E39;
-        border-radius: 3rem;
-        position: relative;
-    }
+		.data_info:nth-child(1) {
+			margin-top: 1.1rem;
+		}
 
-    .task_head {
-        display: flex;
-        height: 20rem;
-        align-items: center;
-    }
+		.name {
+			font-size: 1.5rem;
+			color: #FFF;
+			display: inline-block;
+		}
 
-    .task_head_icon {
-        width: 8rem;
-        margin: 0 6rem;
-    }
+		.task_name {
+			font-size: 1.2rem;
+			transform: scale(0.91);
+			/* 11px */
+			color: #FFF;
+			display: inline-block;
+			background: #E18327;
+			border-radius: 8.5rem;
+			padding: 0 0.6rem 0.2rem;
+		}
 
-    .task_head_title {
-        width: 64rem;
-        margin-right: 4rem;
-    }
+		.time {
+			font-size: 1.2rem;
+			color: #B8B8CC;
+			margin-top: 1rem;
+		}
 
-    .task_head_title_main {
-        font-size: 3rem;
-        font-weight: bold;
-        color: #FEFEFE;
-    }
+		.reward {
+			display: flex;
+			flex-direction: row-reverse;
+			color: wheat;
+		}
 
-    .task_head_title_vice {
-        font-size: 1.8rem;
-        color: white;
-    }
+		.reward_type {
+			display: flex;
+			margin-left: 1rem;
+		}
 
-    .task_head_btn {
-        width: 18rem;
-        height: 4.8rem;
-        line-height: 4.8rem;
-        background: linear-gradient(90deg, #FD7575, #EA5252);
-        border-radius: 2.4rem;
-        text-align: center;
-        font-size: 2rem;
-    }
+		.reward_type>img {
+			width: 2rem;
+		}
+	</style>
+	<body>
 
-    .task_bottom {
-        height: 10rem;
-        background-color: rgba(0, 0, 0, 0.08);
-        border-top: 0.1rem solid #000000;
-        border-radius: 0 0 3rem 3rem;
-        font-size: 3rem;
-        font-weight: bold;
-        color: #FFD99A;
-        line-height: 10rem;
-        padding-left: 20rem;
-    }
+		<div class="data_info">
+			<div class="info">
+				<div class="name">新桌抢位奖励</div>
+				<div class="task_name">官方福利</div>
+				<div class="time">领取时间：2020-11-15</div>
+			</div>
+			<div class="reward">
+				<div class="reward_type">
+					<img src="../img/task_horizontal/icon_money.png" />
+					<span>￥258</span>
+				</div>
+				<div class="reward_type">
+					<img src="../img/task_horizontal/icon_diamond.png" />
+					<span>1581</span>
+				</div>
+			</div>
+		</div>
 
-    .task_hidd {
-        width: 86rem;
-        height: 30rem;
-        background-color: rgba(35, 61, 135, 0.95);
-        border-radius: 3rem 0 0 3rem;
-        position: absolute;
-        bottom: 0;
-        /* display: none; */
-    }
+		<div class="data_info">
+			<div class="info">
+				<div class="name">新桌抢位奖励</div>
+				<div class="task_name">官方福利</div>
+				<div class="time">领取时间：2020-11-15</div>
+			</div>
+			<div class="reward">
+				<div class="reward_type">
+					<img src="../img/task_horizontal/icon_money.png" />
+					<span>￥258</span>
+				</div>
+				<div class="reward_type">
+					<img src="../img/task_horizontal/icon_diamond.png" />
+					<span>1581</span>
+				</div>
+			</div>
+		</div>
 
+		<script>
+			if (window) {
+				// 以490宽为基准，10px等于1rem
+				function setRem() {
+					const curWidth = document.documentElement.clientWidth || window.screen.width;
+					const basicWidth = 375;
+					const basicFontSize = 10;
+					const calcFontSize = curWidth / basicWidth * basicFontSize;
+					document.documentElement.style.fontSize = calcFontSize + 'px';
+				}
 
-    .hidd_title_1 {
-        font-size: 3rem;
-        font-weight: bold;
-        color: #FEFEFE;
-    }
+				setRem();
+				window.addEventListener('resize', function() {
+					setRem();
+				});
+			}
 
-    .hidd_title_2,
-    .hidd_jindu {
-        font-size: 1.8rem;
-    }
-
-    .hidd_jindu {
-        display: flex;
-        margin: 10rem 0 4rem 0;
-    }
-
-    .hidd_jindu_body {
-        width: 50rem;
-        position: relative;
-    }
-
-    .hidd_jindu_bg {
-        height: 0.7rem;
-        background-color: #112253;
-    }
-
-    .hidd_jindu_color {
-        background-color: #F7D69C;
-        height: 100%;
-    }
-
-    .jindu_data {
-        position: absolute;
-        left: 0;
-        top: -0.6rem;
-        transform: translateX(-50%);
-        width: 10rem;
-        text-align: center;
-    }
-
-    .jindu_data_style {
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        background-color: #112253;
-        margin: 0 auto 1rem;
-    }
-
-    .jindu_current {
-        text-align: center;
-        position: absolute;
-        left: 0;
-        transform: translateX(-50%);
-        top: -8.8rem;
-    }
-
-    .jindu_current_text {
-        width: 14.3rem;
-        height: 6.81rem;
-        background-image: url('../img/news.png');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        padding-top: 0.8rem;
-    }
-
-    .jindu_current>img {
-        width: 2.6rem;
-    }
-
-    /* 移动端 */
-    @media screen and (max-width: 768px) {}
-
-    /* PC端 */
-    @media screen and (min-width: 769px) {}
-</style>
-
-<body>
-    <div class="new_user">
-        <div id="task_list">
-            <div class="task">
-                <div class="task_head">
-                    <img class="task_head_icon" src="../img/icon.png">
-                    <div class="task_head_title">
-                        <div class="task_head_title_main">赢下底池</div>
-                        <div class="task_head_title_vice">
-                            您是扑克门外汉，或需要温故知新？COP扑克之城为您学习玩牌提供万全准备！了解牌组强弱排行：我们有实用的牌组强弱排行指南，因此您只要拿到坚果牌。
-                        </div>
-                    </div>
-                    <div class="task_head_btn">
-                        领取奖励
-                    </div>
-                </div>
-                <div class="task_bottom">活动奖励：123456</div>
-                <div class="task_hidd">
-                    <div class="hidd_title_1">
-                        完成条件
-                    </div>
-                    <div class="hidd_title_2">
-                        您是扑克门外汉，或需要温故知新？COP扑克之城为您学习玩牌提供万全准备！了解牌组强弱排行：我们有实用的牌组强弱排行指南，因此您只要拿到坚果牌，
-                    </div>
-                    <div class="hidd_jindu">
-                        <div class="hidd_jindu_title">
-                            任务进度：
-                        </div>
-                        <div class="hidd_jindu_body">
-                            <div class="hidd_jindu_bg">
-                                <div class="hidd_jindu_color"></div>
-                            </div>
-                            <div class="jindu_list">
-                                <div class="jindu_data">
-                                    <div class="jindu_data_style"></div>
-                                    <div>0</div>
-                                </div>
-                                <div class="jindu_data">
-                                    <div class="jindu_data_style"></div>
-                                    <div>1天</div>
-                                </div>
-                            </div>
-                            <div class="jindu_current">
-                                <div class="jindu_current_text">
-                                    <div>当前完成天数</div>
-                                    <div>（1天）</div>
-                                </div>
-                                <img src="../img/金币图标.png" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        if (window) {
-            // PC端是1920标准尺寸画的效果图，移动端是750二倍画布画的效果图
-            function setRem() {
-                const curWidth = document.documentElement.clientWidth || window.screen.width;
-                var basicWidth;
-                if (curWidth > 768) {
-                    basicWidth = 1920;
-                } else {
-                    basicWidth = 375;
-                }
-                const basicFontSize = 10;
-                const calcFontSize = curWidth / basicWidth * basicFontSize;
-                document.documentElement.style.fontSize = calcFontSize + 'px';
-            }
-
-            setRem();
-            window.addEventListener('resize', function () {
-                setRem();
-            });
-        }
-
-        // 移入-也会触发点击事件
-        $("#task_list").on("mouseover", '.task', function () {
-            // $(this).find(".task_hidd").stop().slideToggle();
-        });
-        // 移出
-        $("#task_list").on("mouseout", '.task', function () {
-            // $(this).find(".task_hidd").stop().slideToggle();
-        });
-
-    </script>
-</body>
-
+			var data = [{
+					"config_id": 400,
+					"subtitle": "皇同",
+					"gold": "4.76",
+					"poker_id": 0,
+					"create_time": 1621596206,
+					"task_class_type": "lottery_task",
+					"reward_type": 3,
+					"title": "task.lottery.title",
+					"get_date": "2021-05-21",
+					"mode_config_id": 71,
+					"msg": "",
+					"diamond": 0,
+					"ticket_prop_id": 0,
+					"task_rank_mode": 7,
+					"prop_amount": "1",
+					"ticket": 0,
+					"intac_type": "lottery_task",
+					"pool_type": 3,
+					"task_name": "Royal Flush#皇同#Royal Flush#皇同#Royal Flush#Royal Flush",
+					"get_time": 1621596206,
+					"forward_time": 0,
+					"award_num": 30
+				},
+				{
+					"config_id": 400,
+					"subtitle": "皇同",
+					"gold": "16.93",
+					"poker_id": 0,
+					"create_time": 1621596073,
+					"task_class_type": "lottery_task",
+					"reward_type": 3,
+					"title": "task.lottery.title",
+					"get_date": "2021-05-21",
+					"mode_config_id": 71,
+					"msg": "",
+					"diamond": 0,
+					"ticket_prop_id": 0,
+					"task_rank_mode": 7,
+					"prop_amount": "1",
+					"ticket": 0,
+					"intac_type": "lottery_task",
+					"pool_type": 3,
+					"task_name": "Royal Flush#皇同#Royal Flush#皇同#Royal Flush#Royal Flush",
+					"get_time": 1621596073,
+					"forward_time": 0,
+					"award_num": 29
+				},
+				{
+					"config_id": 400,
+					"subtitle": "皇同",
+					"gold": "33.86",
+					"poker_id": 0,
+					"create_time": 1621595896,
+					"task_class_type": "lottery_task",
+					"reward_type": 3,
+					"title": "task.lottery.title",
+					"get_date": "2021-05-21",
+					"mode_config_id": 71,
+					"msg": "",
+					"diamond": 0,
+					"ticket_prop_id": 0,
+					"task_rank_mode": 7,
+					"prop_amount": "1",
+					"ticket": 0,
+					"intac_type": "lottery_task",
+					"pool_type": 3,
+					"task_name": "Royal Flush#皇同#Royal Flush#皇同#Royal Flush#Royal Flush",
+					"get_time": 1621595896,
+					"forward_time": 0,
+					"award_num": 28
+				},
+				{
+					"config_id": 400,
+					"subtitle": "皇同",
+					"gold": "120.4",
+					"poker_id": 0,
+					"create_time": 1621595773,
+					"task_class_type": "lottery_task",
+					"reward_type": 3,
+					"title": "task.lottery.title",
+					"get_date": "2021-05-21",
+					"mode_config_id": 71,
+					"msg": "",
+					"diamond": 0,
+					"ticket_prop_id": 0,
+					"task_rank_mode": 7,
+					"prop_amount": "1",
+					"ticket": 0,
+					"intac_type": "lottery_task",
+					"pool_type": 3,
+					"task_name": "Royal Flush#皇同#Royal Flush#皇同#Royal Flush#Royal Flush",
+					"get_time": 1621595773,
+					"forward_time": 0,
+					"award_num": 27
+				},
+				{
+					"config_id": 400,
+					"subtitle": "皇同",
+					"gold": "240.8",
+					"poker_id": 0,
+					"create_time": 1621595646,
+					"task_class_type": "lottery_task",
+					"reward_type": 3,
+					"title": "task.lottery.title",
+					"get_date": "2021-05-21",
+					"mode_config_id": 71,
+					"msg": "",
+					"diamond": 0,
+					"ticket_prop_id": 0,
+					"task_rank_mode": 7,
+					"prop_amount": "1",
+					"ticket": 0,
+					"intac_type": "lottery_task",
+					"pool_type": 3,
+					"task_name": "Royal Flush#皇同#Royal Flush#皇同#Royal Flush#Royal Flush",
+					"get_time": 1621595646,
+					"forward_time": 0,
+					"award_num": 26
+				},
+				{
+					"sign_reward_all": {
+						"3000": {
+							"1": {
+								"diamond": 0,
+								"gold": 300000,
+								"ticket_prop_id": 0,
+								"is_received": 0,
+								"ticket_count": 0,
+								"gold_extra": 300000,
+								"diamond_extra": 0,
+								"is_finish": 1
+							}
+						}
+					},
+					"config_id": 424,
+					"subtitle": "短牌玩牌签到",
+					"gold": "200",
+					"task_official_type": 8,
+					"task_game_type": 10,
+					"create_time": 1621595494,
+					"task_class_type": "official_task_real",
+					"reward_type": 1,
+					"title": "task.official.real.title",
+					"get_date": "2021-05-21",
+					"msg": "",
+					"channel": "LPK_IOS_001",
+					"diamond": 0,
+					"ticket_dict": {
+						"0": 0
+					},
+					"prop_amount": "1",
+					"ticket": 0,
+					"small_blind": 0,
+					"intac_type": "official_task_real",
+					"task_name": "#短牌玩牌签到##",
+					"get_time": 1621595494,
+					"award_num": 25
+				}
+			]
+		</script>
+	</body>
 </html>
