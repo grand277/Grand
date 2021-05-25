@@ -1,0 +1,38 @@
+！
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+	</head>
+	<style>
+		
+	</style>
+	<body>
+		<script type="text/javascript">
+			var grand = new Array()
+			function printChar() {
+				var start = 19968;
+				var end = 40869;
+				var maxCount = end - start;
+
+				function transform(n) {
+					return unescape("%u" + n.toString(16));
+				}
+
+				function print(data) {
+					// console.log(data);
+					// document.write(data);
+					grand.push(data)
+				}
+				for (var n = 0; n < maxCount; n++) {
+					print(transform(start + n));
+				}
+				document.write(grand);
+				console.log(grand)
+			}
+			printChar();
+		</script>
+	</body>
+</html>
