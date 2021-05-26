@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue</title>
+	</head>
+	<style>
+		.v1 {
+			color: red;
+		}
+
+		.v2 {
+			background-color: #008000;
+		}
+	</style>
+	<body>
+
+		<div id="app">
+
+			<h1 class="v3" :class="{v1:v1,v2:v2}">{{messager}}</h1>
+			<h1 :class="get_class()">{{messager}}</h1>
+
+			<button @click="btn_click">变色</button>
+		</div>
+
+		<script src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					messager: "你好",
+					v1: true,
+					v2: true,
+				},
+				methods: {
+					btn_click: function() {
+						this.v1 = !this.v1,
+							this.v2 = !this.v2
+					},
+					get_class: function() {
+						return {
+							v1: this.v1,
+							v2: this.v2
+						}
+					}
+				}
+			})
+		</script>
+
+	</body>
+</html>

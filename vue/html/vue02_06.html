@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue01</title>
+	</head>
+	<style>
+		[v-cloak] {
+			display: none;
+		}
+	</style>
+	<body>
+
+		<div id="app" v-cloak>
+			{{grand}}
+			<ul>
+				<li v-for="data in grand">{{data}}</li>
+			</ul>
+		</div>
+
+		<script src="../js/vue.js"></script>
+		<script>
+			setTimeout(() => {
+				const app = new Vue({
+					el: '#app',
+					data: {
+						messager: "你好",
+						grand: ['海王', '钢铁侠', '大话西游']
+					}
+				})
+			}, 1000)
+		</script>
+
+	</body>
+</html>

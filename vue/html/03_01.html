@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue</title>
+	</head>
+	<body>
+
+		<div id="app">
+			{{messager}}
+			<img v-bind:src="imgUrl" />
+			<a v-bind:href="url">百度一下</a>
+			<a :href="url">百度一下</a>
+		</div>
+
+		<script src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					messager: "你好",
+					imgUrl: "../../html/jq/jQuery-rolling20160405/images/1.jpg",
+					url: "http://www.baidu.com"
+				}
+			})
+		</script>
+
+	</body>
+</html>

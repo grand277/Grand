@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue</title>
+	</head>
+	<style>
+		.v1 {
+			color: red;
+		}
+	
+		.v2 {
+			background-color: #008000;
+		}
+	</style>
+	<body>
+
+		<div id="app">
+			<h1 :class="[active,line]">{{messager}}</h1>
+		</div>
+
+		<script src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					messager: "你好",
+					active: "v1",
+					line: "v2"
+				}
+			})
+		</script>
+
+	</body>
+</html>
