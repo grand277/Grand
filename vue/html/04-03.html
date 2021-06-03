@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue</title>
+	</head>
+	<body>
+
+		<div id="app">
+			{{fullname}}
+			<h1>{{grand}}</h1>
+		</div>
+
+		<script src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					messager: "你好",
+					firstName: "Kobe"
+				},
+				computed: {
+					// 计算属性一般没有set方法，只读属性
+					// 计算属性是有缓存的，相对于methods（方法）性能要好
+					fullname: {
+						set: function() {
+							// 这里可以进行赋值的操作
+						},
+						get: function() {
+							return this.messager + " " + this.firstName
+						}
+					},
+					grand:function(){
+						return this.messager + " " + this.firstName
+					}
+				}
+			})
+		</script>
+
+	</body>
+</html>

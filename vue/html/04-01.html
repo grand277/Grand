@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue</title>
+	</head>
+	<body>
+
+		<div id="app">
+			<h2>{{getfullName()}}</h2>
+			
+			
+			<h2>{{fullName}}</h2>
+		</div>
+
+		<script src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					firstName: "Lebron",
+					LastName: "James",
+				},
+				methods:{
+					getfullName(){
+						return this.firstName + ' ' + this.LastName
+					}
+				},
+				computed:{
+					fullName:function(){
+						return this.firstName + ' ' + this.LastName
+					}
+				}
+			})
+		</script>
+
+	</body>
+</html>

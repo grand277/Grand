@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue</title>
+	</head>
+	<body>
+
+		<div id="app">
+			<!-- <h2 v-bind:style="{color:'red'}">messager</h2> -->
+			<h2 v-bind:style="{color:style_color,backgroundColor:background}">messager</h2>
+		</div>
+
+		<script src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					messager: "你好",
+					style_color: "white",
+					background: "#464165",
+				}
+			})
+		</script>
+
+	</body>
+</html>
