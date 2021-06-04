@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-show</title>
+	</head>
+	<body>
+
+		<div id="app">
+			<div>
+				<button @click="btn">是否显示</button>
+			</div>
+			<img v-show="is_show" src="../img/Official_website/icon_lottery.png" />
+		</div>
+
+		<script src="../vue/js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					is_show: true,
+					value: 18
+				},
+				methods: {
+					btn: function() {
+						if(this.value < this.value) {
+							alert("小于18岁不支持查看")
+							return
+						}
+						this.is_show = !this.is_show
+					}
+				}
+			})
+		</script>
+
+	</body>
+</html>

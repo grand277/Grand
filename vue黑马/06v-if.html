@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-if</title>
+	</head>
+	<body>
+
+		<div id="app">
+			<div>
+				<button @click="btn">是否显示</button>
+			</div>
+			<p v-if="is_show">黑马程序员</p>
+		</div>
+
+		<script src="../vue/js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					is_show: true,
+				},
+				methods: {
+					btn: function() {
+						this.is_show = !this.is_show
+					}
+				}
+			})
+		</script>
+
+	</body>
+</html>

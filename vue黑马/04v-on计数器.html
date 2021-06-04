@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-on计算器</title>
+	</head>
+	<body>
+
+		<div id="app">
+			<div>{{messager}}</div>
+			<button v-on:click="btn_sub">-</button>
+			<button @click="btn_add">+</button>
+		</div>
+
+		<script src="../vue/js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					messager: 1,
+				},
+				methods: {
+					btn_sub: function() {
+						if(this.messager < 1){
+							alert("不能再减了！")
+							return
+						}
+						this.messager--
+					},
+					btn_add: function() {
+						if(this.messager >= 10){
+							alert("不能再加了！")
+							return
+						}
+						this.messager++
+					}
+				}
+			})
+		</script>
+
+	</body>
+</html>

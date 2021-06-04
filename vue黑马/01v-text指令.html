@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-text指令</title>
+	</head>
+	<body>
+
+		<div id="app">
+			<div id="">
+				{{messager}}
+			</div>
+			<div v-text="info"></div>
+		</div>
+
+		<script src="../vue/js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					messager: "你好",
+					info: "grand"
+				}
+			})
+		</script>
+
+	</body>
+</html>

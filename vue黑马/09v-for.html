@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-for</title>
+	</head>
+	<body>
+
+		<div id="app">
+			<button type="button" @click="add()">加</button>
+			<button type="button" @click="remove()">减</button>
+			<ul>
+				<li v-for="(data,index) in list">
+					hi {{data}}，第{{index}}条
+				</li>
+			</ul>
+			<ul>
+				<li v-for="(data,index) in obgArr" v-bind:title="data.name">
+					hi {{data.name}}，第{{index}}条
+				</li>
+			</ul>
+			<ul>
+				<li v-for="data in imgArr">
+					<img :src="data">
+				</li>
+			</ul>
+		</div>
+
+		<script src="../vue/js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					imgArr: [
+						"../html/jq/lucky/img/tx1.jpg",
+						"../html/jq/lucky/img/tx2.jpg",
+						"../html/jq/lucky/img/tx3.jpg",
+						"../html/jq/lucky/img/tx4.jpg",
+						"../html/jq/lucky/img/tx5.jpg",
+						"../html/jq/lucky/img/tx6.jpg",
+						"../html/jq/lucky/img/tx7.jpg",
+						"../html/jq/lucky/img/tx8.jpg",
+						"../html/jq/lucky/img/tx9.jpg",
+						"../html/jq/lucky/img/tx10.jpg",
+						"../html/jq/lucky/img/tx11.jpg",
+						"../html/jq/lucky/img/tx12.jpg",
+						"../html/jq/lucky/img/tx13.jpg",
+						"../html/jq/lucky/img/tx14.jpg",
+						"../html/jq/lucky/img/tx15.jpg",
+					],
+					list: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+					obgArr: [{
+							name: "北京"
+						},
+						{
+							name: "上海"
+						},
+						{
+							name: "深圳"
+						},
+					]
+				},
+				methods: {
+					add: function() {
+						this.obgArr.push({
+							name: "老挝"
+						})
+					},
+					remove: function() {
+						this.obgArr.shift()
+					}
+				}
+			})
+		</script>
+
+	</body>
+</html>

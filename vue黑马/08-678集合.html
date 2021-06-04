@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>678集合</title>
+	</head>
+	<body>
+
+		<div id="app">
+			<button @click="prev" v-show="index>0">上一张</button>
+			<button @click="next" v-show="index<imgArr.length-1">下一张</button>
+			<br>
+			<img :src="imgArr[index]" />
+		</div>
+
+		<script src="../vue/js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					imgArr: [
+						"../html/jq/lucky/img/tx1.jpg",
+						"../html/jq/lucky/img/tx2.jpg",
+						"../html/jq/lucky/img/tx3.jpg",
+						"../html/jq/lucky/img/tx4.jpg",
+						"../html/jq/lucky/img/tx5.jpg",
+						"../html/jq/lucky/img/tx6.jpg",
+						"../html/jq/lucky/img/tx7.jpg",
+						"../html/jq/lucky/img/tx8.jpg",
+						"../html/jq/lucky/img/tx9.jpg",
+						"../html/jq/lucky/img/tx10.jpg",
+						"../html/jq/lucky/img/tx11.jpg",
+						"../html/jq/lucky/img/tx12.jpg",
+						"../html/jq/lucky/img/tx13.jpg",
+						"../html/jq/lucky/img/tx14.jpg",
+						"../html/jq/lucky/img/tx15.jpg",
+					],
+					index: 0,
+				},
+				methods: {
+					prev: function() {
+						this.index--
+					},
+					next: function() {
+						this.index++
+					}
+				}
+			})
+		</script>
+
+	</body>
+</html>
