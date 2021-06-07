@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>天气查询</title>
+	</head>
+	<body>
+		<div id="app">
+			<h1>天知道</h1>
+			<div class="">
+				<input type="text" @keyup.enter="search" placeholder="地域" v-model="city" />
+				<button type="button" @click="search">搜索</button>
+			</div>
+			<div>
+				<a href="javascript:;" @click="changCity('北京')">北京</a>
+				<a href="javascript:;" @click="changCity('上海')">上海</a>
+				<a href="javascript:;" @click="changCity('深圳')">深圳</a>
+				<a href="javascript:;" @click="changCity('广州')">广州</a>
+			</div>
+			<ul>
+				<li v-for="item in weather_list">
+					{{item.date}}|
+					{{item.type}}|
+					{{item.low}}|
+					{{item.high}}
+				</li>
+			</ul>
+		</div>
+
+		<script src="../vue/js/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					city: '北京',
+					weather_list: [],
+				},
+				methods: {
+					search: function() {
+						console.log(this.city)
+						var that = this
+						axios.get("http://wthrcdn.etouch.cn/weather_mini?city=" + this.city).then(
+							function(response) {
+								console.log(response)
+								console.log(response.data.data.forecast)
+								that.weather_list = response.data.data.forecast
+							},
+							function(err) {
+								alert(err)
+							}
+						)
+					},
+					changCity: function(city) {
+						this.city = city
+						this.search()
+					}
+				}
+			})
+		</script>
+
+	</body>
+</html>
