@@ -1,0 +1,26 @@
+npm run serve  运行
+
+模块化打包 -> 到服务器（部署）
+webpack必须依赖node环境
+npm工具（管理node的各种包）
+
+node -v （查看版本）
+
+dist（打包好的，放在这，等待发布）
+scr（开发的东西）
+
+main.js（人口，也可以用index.js）
+
+webpack ./src/main.js ./dist/bundle.js
+
+npm init （生成package.js）
+
+npm install（package.json编译 不能加注释 license是否开源）
+
+npm install webpack@3.6.0（本地安装，也就是这个项目安装） --save-dev（开发时依赖）
+
+开发时依赖（webpack）dependencies
+
+运行时依赖  devDependencies
+
+scripts	脚本 优先使用本地
