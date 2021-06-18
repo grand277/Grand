@@ -24,3 +24,18 @@ npm install webpack@3.6.0（本地安装，也就是这个项目安装） --save
 运行时依赖  devDependencies
 
 scripts	脚本 优先使用本地
+
+-------------------------------------------
+Vue CLI（脚手架）
+前提 基于Node
+npm就是管理（Node包的管理工具）
+依赖于 Webpack（npm install webpack -g）
+安卓Vue脚手架
+npm install -g @vue/cli（-g）全局的意思
+vue --version（查看）
+npm uninstall vue-cli -g（卸载，版本太旧，卸载重装）
+vue init webpack 项目名称（脚手架2的创建方式）
+vue create 项目名称（脚手架3的创建方式）
+npm run dev （运行项目）
+npm run bulid （打包项目）
+npm run serve（vuecli3运行项目）

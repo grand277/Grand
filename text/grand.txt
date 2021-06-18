@@ -8,9 +8,25 @@ featrue.master.task_manager_horizontal
 featrue.master.web_many_language
 featrue.master.banner_change_project
 
+cocos
+parent.postMessage(data, "*");
+
 LoginAdvertisingMapCache(9).get_all_data(1)
 
 tail * -f | grep 'user_set_language' -E -A 20 -B 1
+
+web_token_login
+password_login
+captcha_login
+web_register
+
+
+channel = request.REQUEST.get('channel')
+
+if channel and channel in [config.COP_WEB_001]:
+
+task_page_user
+    
 
 # 不跟版本走
 一级代理推广链接优化	0.5天
