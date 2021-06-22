@@ -44,3 +44,12 @@ https://aijiumai.cn/view/item/46.html（另一台机器上进行此操作）
 Vue-router（路由）
 公网ip和内网ip
 前端路由，加载组件，更改url后，不刷新页面
+href（超链接，就是刷新的）
+hash（哈希，不会刷新）location.hash = 666
+history.pushState({},'','home')（H5新增）（vue3用不了）（栈结构）（入栈）
+history.back()（移除上一个栈）（出栈）
+history.replaceState({},'','ho55')（替换）
+history.go(-1)（上一个）（用的是哈希）
+history.back()（等同于history.go(-1)）
+history.forward()（等同于history.go(1)）
+npm install vue-router --save
