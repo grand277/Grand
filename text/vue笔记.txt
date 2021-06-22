@@ -40,3 +40,7 @@ npm run build （打包项目）
 npm run serve（vuecli3运行项目）
 vue ui（项目管理器）
 https://aijiumai.cn/view/item/46.html（另一台机器上进行此操作）
+----
+Vue-router（路由）
+公网ip和内网ip
+前端路由，加载组件，更改url后，不刷新页面
