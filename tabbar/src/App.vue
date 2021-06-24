@@ -1,23 +1,26 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <!-- <img src="./assets/logo.png"> -->
     <router-view/>
+    <main-tab-bar/>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  // import TabBar from './components/tabbar/TabBar.vue'
+  // import TabBarItem from './components/tabbar/TabBarItem.vue'
+  import MainTabBar from './components/MainTabBar'
+
+  export default {
+    name: 'App',
+    components: {
+      MainTabBar,
+      // TabBar,
+      // TabBarItem
+    }
+  }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import url("./assets/css/base.css");
 </style>

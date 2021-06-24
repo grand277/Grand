@@ -53,3 +53,7 @@ history.go(-1)（上一个）（用的是哈希）
 history.back()（等同于history.go(-1)）
 history.forward()（等同于history.go(1)）
 npm install vue-router --save
+-------------------
+Vuex（状态管理）
+npm install vuex --save
+谷歌浏览器-谷歌商店插件  devtools
