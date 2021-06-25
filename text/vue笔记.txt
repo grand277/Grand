@@ -57,3 +57,8 @@ npm install vue-router --save
 Vuex（状态管理）
 npm install vuex --save
 谷歌浏览器-谷歌商店插件  devtools
+-------------------
+axios（网络请求的封装）
+1.安装（加dev是只在开发环境）
+npm install axios --save
+httpbin.org（测试：可以做很多网站模拟）
