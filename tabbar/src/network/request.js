@@ -95,3 +95,12 @@ export function request(config) {
     // 发送真正的网络请求
     return instance(config)
 }
+
+// 用法
+// request({
+//   url: '/home/data'
+// }).then(res => {
+//   console.log(res)
+// }).catch(err => {
+//   console.log(err)
+// })
